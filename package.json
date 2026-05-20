@@ -34,18 +34,14 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@napi-rs/canvas": "^1.0.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22.10.1",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "autoprefixer": "^10.4.20",
-    "canvas": "^3.2.3",
     "eslint": "^9.16.0",
     "eslint-config-next": "^15.1.6",
     "next-sitemap": "^4.2.3",
-    "pdf-to-png-converter": "^4.0.0",
-    "pdfjs-dist": "^4.10.38",
     "postcss": "^8.4.49",
     "prisma": "^6.1.0",
     "sharp": "^0.34.5",
