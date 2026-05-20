@@ -1,0 +1,122 @@
+import type { CatalogItem } from "@/types/catalog";
+
+const ACCESSOIRE_IMAGES = {
+  default: "/img/products/megalife/gainable-outdoor-r410a-studio.jpg",
+  support: "/img/products/megalife/gainable-indoor-studio.jpg",
+  entretien: "/img/products/trane/trane-cassette-office.jpg",
+} as const;
+
+export const accessoiresItems: CatalogItem[] = [
+  {
+    id: "support-mural-inox",
+    category: "accessoire",
+    name: "Support Mural Inox Renforcé",
+    gammeLabel: "Climatisation — Fixation extérieure",
+    shortDescFr: "Support mural inox 304, traité anti-corrosion, charge 100 kg, pour groupe extérieur de climatiseur.",
+    image: "/img/products/megalife/gainable-outdoor-r410a-studio.jpg",
+    specs: [
+      { label: "Matière", value: "Inox 304" },
+      { label: "Charge max.", value: "100 kg" },
+      { label: "Traitement", value: "Anti-corrosion bord de mer" },
+    ],
+    highlights: ["Inox 304", "Bord de mer OK", "Charge 100 kg"],
+    crossSell: ["kit-goulotte-decorative", "contrat-entretien-annuel"],
+  },
+  {
+    id: "kit-goulotte-decorative",
+    category: "accessoire",
+    name: "Kit Goulotte Décorative 3 m",
+    gammeLabel: "Climatisation — Finition esthétique",
+    shortDescFr: "Goulotte PVC blanc / RAL au choix — masque les liaisons frigorifiques pour un rendu mural impeccable.",
+    image: ACCESSOIRE_IMAGES.default,
+    specs: [
+      { label: "Longueur", value: "3 m (extensible)" },
+      { label: "Finition", value: "Blanc / RAL personnalisé" },
+      { label: "Inclus", value: "Coudes, dérivations, fixations" },
+    ],
+    highlights: ["Finition murale propre", "RAL au choix"],
+    crossSell: ["support-mural-inox"],
+  },
+  {
+    id: "contrat-entretien-annuel",
+    category: "accessoire",
+    name: "Contrat d'Entretien Annuel",
+    gammeLabel: "Climatisation — 2 visites par an",
+    shortDescFr: "Contrat d'entretien annuel : 2 visites (printemps + automne), nettoyage, contrôle gaz, garantie prolongée.",
+    longDescFr:
+      "Contrat de maintenance préventive RIZAL : 2 visites annuelles (avant l'été et avant l'hiver), nettoyage des filtres et de l'échangeur, contrôle de la pression du gaz frigorifique, vérification du compresseur et du drain, intervention prioritaire en cas de panne, prolongation de la garantie constructeur.",
+    image: ACCESSOIRE_IMAGES.entretien,
+    specs: [
+      { label: "Visites", value: "2 par an (printemps + automne)" },
+      { label: "Inclus", value: "Nettoyage, contrôle gaz, drain, compresseur" },
+      { label: "Avantage", value: "Prolongation garantie + intervention prioritaire" },
+    ],
+    highlights: ["2 visites/an", "Garantie prolongée", "Intervention prioritaire"],
+    crossSell: ["support-mural-inox", "kit-goulotte-decorative"],
+    badge: "Recommandé",
+  },
+  {
+    id: "kit-fixation-toiture",
+    category: "accessoire",
+    name: "Kit Fixation Toiture Solaire",
+    gammeLabel: "Solaire — Tuile / Bac acier / Terrasse",
+    shortDescFr: "Kit complet de fixation solaire — adapté tuile mécanique, bac acier ou toiture terrasse.",
+    image: "/img/products/lg/lg-multi-v-5-hero-essaouira.jpg",
+    specs: [
+      { label: "Compatibilité", value: "Tuile / Bac acier / Terrasse" },
+      { label: "Matière", value: "Aluminium anodisé + inox" },
+      { label: "Garantie", value: "20 ans structure" },
+    ],
+    highlights: ["3 types toiture", "Aluminium 20 ans"],
+    crossSell: ["panneau-jinko-tiger-neo", "onduleur-solax-x1-lite"],
+  },
+  {
+    id: "electrolyseur-sel",
+    category: "accessoire",
+    name: "Électrolyseur au Sel + Régulation pH",
+    gammeLabel: "Piscine — Traitement automatique",
+    shortDescFr: "Électrolyseur au sel avec régulation pH automatique — eau saine sans chlore, peau préservée.",
+    longDescFr:
+      "Système de traitement de piscine par électrolyse au sel : production automatique de chlore actif à partir d'une faible concentration en sel, régulation pH/Redox automatique. Plus doux pour la peau, plus écologique, moins de manipulation de produits chimiques. Idéal pour villas familiales.",
+    image: "/img/products/piscine/accessoires/electrolyseur-sel.jpg",
+    specs: [
+      { label: "Compatibilité piscines", value: "Jusqu'à 100 m³" },
+      { label: "Régulation", value: "pH + Redox automatique" },
+      { label: "Concentration sel", value: "4 g/L (eau de baignade douce)" },
+    ],
+    highlights: ["Sans chlore manuel", "Peau préservée", "Régulation auto"],
+    crossSell: ["pac-piscine", "eclairage-led-rgb"],
+  },
+  {
+    id: "pac-piscine",
+    category: "accessoire",
+    name: "Pompe à Chaleur Piscine",
+    gammeLabel: "Piscine — Chauffage 12 - 20 kW",
+    shortDescFr: "PAC piscine 12 à 20 kW — baignade prolongée d'avril à octobre au Maroc.",
+    image: "/img/products/piscine/accessoires/pac-piscine.jpg",
+    capacities: ["12 kW", "16 kW", "20 kW"],
+    specs: [
+      { label: "Type", value: "Air/Eau Inverter" },
+      { label: "Saison", value: "Avril - Octobre confortable" },
+      { label: "COP", value: "> 5,0" },
+    ],
+    highlights: ["Baignade 7 mois", "COP > 5,0", "Inverter"],
+    crossSell: ["electrolyseur-sel", "eclairage-led-rgb"],
+  },
+  {
+    id: "eclairage-led-rgb",
+    category: "accessoire",
+    name: "Éclairage LED RGB Piscine",
+    gammeLabel: "Piscine — Spots LED multicolores pilotables",
+    shortDescFr: "Spots LED RGB encastrés dans la piscine — 16 millions de couleurs, pilotage smartphone.",
+    image: "/img/products/piscine/accessoires/eclairage-led-rgb.jpg",
+    specs: [
+      { label: "Technologie", value: "LED RGB 24V" },
+      { label: "Pilotage", value: "Télécommande + smartphone" },
+      { label: "Couleurs", value: "16 millions" },
+      { label: "Étanchéité", value: "IP68" },
+    ],
+    highlights: ["16M couleurs", "Smartphone", "IP68"],
+    crossSell: ["electrolyseur-sel", "pac-piscine"],
+  },
+];

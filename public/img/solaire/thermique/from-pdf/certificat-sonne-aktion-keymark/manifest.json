@@ -1,0 +1,24 @@
+{
+  "pdf": "certificat-sonne-aktion-keymark",
+  "pages": 3,
+  "images": [
+    {
+      "page": 1,
+      "file": "certificat-sonne-aktion-keymark-p01-img001.png",
+      "w": 3308,
+      "h": 4680
+    },
+    {
+      "page": 2,
+      "file": "certificat-sonne-aktion-keymark-p02-img002.png",
+      "w": 1654,
+      "h": 2339
+    },
+    {
+      "page": 3,
+      "file": "certificat-sonne-aktion-keymark-p03-img003.png",
+      "w": 140,
+      "h": 108
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A2845"/>
+      <stop offset="100%" stop-color="#0B0F1C"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.15" r="0.7">
+      <stop offset="0%" stop-color="#F47B20" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#F47B20" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Decorative line -->
+  <line x1="80" y1="120" x2="160" y2="120" stroke="#F47B20" stroke-width="3"/>
+
+  <text x="80" y="160" font-family="'Inter', Arial, sans-serif" font-size="22" font-weight="700" fill="#F47B20" letter-spacing="6">RIZAL</text>
+
+  <!-- Brand name -->
+  <text x="80" y="320" font-family="'Brush Script MT', 'Lucida Handwriting', cursive" font-style="italic" font-weight="700" font-size="180" fill="#F47B20">Rizal</text>
+
+  <!-- Tagline -->
+  <text x="80" y="400" font-family="'Cormorant Garamond', Georgia, serif" font-size="46" fill="#FFFFFF" font-weight="500">Luxury Home &amp; Hardware Solutions</text>
+  <text x="80" y="445" font-family="'Inter', Arial, sans-serif" font-size="22" fill="#FFFFFF" opacity="0.7" letter-spacing="2">N1 AU MAROC . CLIMATISATION . SOLAIRE . VILLA</text>
+
+  <!-- Footer line -->
+  <text x="80" y="565" font-family="'Inter', Arial, sans-serif" font-size="20" fill="#FFFFFF" opacity="0.55" letter-spacing="3">MEGALIFE  .  INGELEC  .  LG  .  TRANE</text>
+  <text x="1120" y="565" text-anchor="end" font-family="'Inter', Arial, sans-serif" font-size="20" fill="#F47B20" font-weight="600" letter-spacing="2">rizal.click</text>
+</svg>

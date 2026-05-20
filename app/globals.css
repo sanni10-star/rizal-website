@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ink: 11 11 12;
+    --color-bone: 244 241 236;
+    --color-sand: 201 169 110;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F4F1EC;
+    color: #0B0B0C;
+    font-feature-settings: "ss01", "cv01", "cv11";
+  }
+
+  ::selection {
+    background-color: #C9A96E;
+    color: #0B0B0C;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic), Cairo, sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid #F47B20;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .btn-brand {
+    @apply inline-flex h-12 items-center gap-2 rounded-full bg-brand px-6 text-sm font-semibold text-white shadow-lg shadow-brand/20 transition hover:bg-brand-600 active:scale-[0.97];
+  }
+  .btn-ink {
+    @apply inline-flex h-12 items-center gap-2 rounded-full bg-ink px-6 text-sm font-semibold text-bone shadow-md transition hover:bg-ink/85 active:scale-[0.97];
+  }
+  .btn-ghost {
+    @apply inline-flex h-12 items-center gap-2 rounded-full border border-ink/15 bg-white px-6 text-sm font-semibold text-ink transition hover:bg-bone active:scale-[0.97];
+  }
+  .btn-wa {
+    @apply inline-flex h-12 items-center gap-2 rounded-full bg-wa px-6 text-sm font-semibold text-white shadow-lg shadow-emerald-900/20 transition hover:bg-emerald-600 active:scale-[0.97];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

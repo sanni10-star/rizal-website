@@ -1,0 +1,269 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ====================== LEADS & QUOTES ======================
+// A "lead" is any visitor who took an intent action (clicked WhatsApp,
+// submitted contact form, downloaded lead magnet, opted into newsletter).
+// A "Quote" (devis) is the cart at checkout time, sent to WhatsApp.
+
+model Lead {
+  id           String   @id @default(cuid())
+  source       LeadSource
+  // Identification (optional, depends on source)
+  firstName    String?
+  lastName     String?
+  email        String?
+  phone        String?
+  city         String?
+  // Project
+  subject      String?
+  message      String?
+  budget       String?  // "<50k" | "50-150k" | "150-500k" | ">500k"
+  // Marketing
+  utmSource    String?
+  utmMedium    String?
+  utmCampaign  String?
+  utmTerm      String?
+  utmContent   String?
+  referrer     String?
+  landingPage  String?
+  // Tech
+  ip           String?
+  userAgent    String?
+  // Status pipeline
+  status       LeadStatus @default(NEW)
+  score        Int      @default(0)   // lead scoring 0-100
+  notes        String?
+  assignedTo   String?  // sales rep id
+  // Relations
+  quote        Quote?
+  events       LeadEvent[]
+  // Timestamps
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  contactedAt  DateTime?
+  qualifiedAt  DateTime?
+  closedAt     DateTime?
+
+  @@index([status])
+  @@index([source])
+  @@index([createdAt])
+  @@index([phone])
+  @@index([email])
+}
+
+enum LeadSource {
+  WHATSAPP_QUOTE        // cart -> WhatsApp checkout
+  WHATSAPP_PRODUCT      // single product -> WhatsApp
+  WHATSAPP_FLOATING     // floating button
+  CONTACT_FORM
+  NEWSLETTER
+  LEAD_MAGNET           // PDF download
+  BTU_CALCULATOR
+  SOLAR_CALCULATOR
+  EXIT_INTENT
+  PHONE_CALL            // manual entry
+  REFERRAL
+  OTHER
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED        // budget + intent confirmed
+  PROPOSAL_SENT
+  NEGOTIATING
+  WON
+  LOST
+  COLD
+}
+
+model LeadEvent {
+  id        String   @id @default(cuid())
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  type      String   // "contacted" | "called" | "email_sent" | "whatsapp_sent" | "note"
+  payload   Json?
+  createdBy String?
+  createdAt DateTime @default(now())
+
+  @@index([leadId])
+}
+
+model Quote {
+  id           String       @id @default(cuid())
+  leadId       String?      @unique
+  lead         Lead?        @relation(fields: [leadId], references: [id])
+  // Who
+  firstName    String?
+  lastName     String?
+  email        String?
+  phone        String?
+  city         String?
+  // What
+  lines        QuoteLine[]
+  itemsCount   Int          @default(0)
+  // Status
+  status       QuoteStatus  @default(DRAFT)
+  totalEstimateMad  Decimal?  @db.Decimal(12, 2)  // optional internal estimate
+  pdfUrl       String?
+  whatsappSent Boolean      @default(false)
+  // Marketing
+  source       String?
+  utm          Json?
+  // Timestamps
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  sentAt       DateTime?
+  acceptedAt   DateTime?
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum QuoteStatus {
+  DRAFT
+  SENT
+  VIEWED
+  ACCEPTED
+  REJECTED
+  EXPIRED
+}
+
+model QuoteLine {
+  id        String  @id @default(cuid())
+  quoteId   String
+  quote     Quote   @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  itemId    String  // catalog item id (e.g. "lg-artcool-mirror")
+  name      String
+  brand     String?
+  gammeLabel String?
+  qty       Int     @default(1)
+  notes     String?
+  createdAt DateTime @default(now())
+
+  @@index([quoteId])
+}
+
+// ====================== NEWSLETTER ======================
+model Subscriber {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  firstName   String?
+  city        String?
+  source      String?   // landing page id / popup / footer
+  consent     Boolean  @default(true)
+  unsubscribedAt DateTime?
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+// ====================== REVIEWS / TESTIMONIALS ======================
+model Review {
+  id          String   @id @default(cuid())
+  authorName  String
+  authorCity  String?
+  authorPhotoUrl String?
+  rating      Int      // 1-5
+  title       String?
+  body        String
+  category    String?  // "climatisation" | "piscine" | "renovation" | "solaire"
+  productId   String?  // related catalog item
+  videoUrl    String?
+  beforeUrl   String?
+  afterUrl    String?
+  approved    Boolean  @default(false)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@index([approved])
+  @@index([featured])
+}
+
+// ====================== BLOG / CONTENT ======================
+model BlogPost {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String
+  body        String   // markdown
+  coverImage  String?
+  category    String   // "Guide" | "Conseils" | "Inspiration"
+  tags        String[]
+  authorName  String   @default("Equipe RIZAL")
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([published])
+}
+
+// ====================== SOCIAL PROOF (LIVE COUNTER) ======================
+// Aggregated rolling counters used to show "12 personnes ont demandé un devis aujourd'hui"
+model SocialProof {
+  id           String   @id @default(cuid())
+  type         String   // "quote_today" | "calls_week" | "installs_month"
+  count        Int
+  windowStart  DateTime
+  windowEnd    DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([type])
+}
+
+// ====================== ADMIN AUTH ======================
+model AdminUser {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  hashedPassword String
+  name        String?
+  role        AdminRole @default(SALES)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum AdminRole {
+  ADMIN
+  SALES
+  VIEWER
+}
+
+// ====================== APPOINTMENTS (site visits) ======================
+model Appointment {
+  id          String   @id @default(cuid())
+  leadId      String?
+  firstName   String
+  lastName    String
+  email       String?
+  phone       String
+  city        String
+  address     String?
+  scheduledAt DateTime
+  duration    Int      @default(60)  // minutes
+  type        String   // "visite_villa" | "metre_climatisation" | "etude_solaire" | "etude_piscine"
+  status      AppointmentStatus @default(SCHEDULED)
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([scheduledAt])
+  @@index([status])
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
