@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Inter, Cairo, Playfair_Display } from "next/font/go
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata, localBusinessJsonLd } from "@/lib/seo";
 import { BackButtonWrapper } from "@/components/ui/BackButtonWrapper";
@@ -50,13 +49,16 @@ export default function RootLayout({
       lang="fr"
       className={`${display.variable} ${sans.variable} ${arabic.variable} ${logo.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+      </head>
       <body className="font-sans antialiased">
         <JsonLd data={localBusinessJsonLd()} />
         <Header />
         <BackButtonWrapper />
         <main>{children}</main>
         <Footer />
-        <FloatingWhatsApp />
         <DeferredLayoutWidgets />
         <Analytics />
       </body>

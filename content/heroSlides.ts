@@ -13,7 +13,8 @@ export type HeroSlide = {
 export const heroSlides: HeroSlide[] = [
   {
     id: "hvac",
-    image: "/img/categories/climatisation.jpg",
+    image:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=2400&q=85&auto=format&fit=crop",
     imageAlt: "Salon de villa contemporaine équipée d'une climatisation LG ARTCOOL",
     badgeAr: "أفضل العروض",
     badgeArTransliteration: "Meilleures offres",
@@ -37,7 +38,8 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: "solaire",
-    image: "/img/solaire/panels/panneau-tier1-hero.jpg",
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=2400&q=85&auto=format&fit=crop",
     imageAlt: "Toiture villa avec panneaux solaires premium et onduleur Huawei",
     badgeAr: "شحن سريع · ضمان ٢٥ سنة",
     badgeArTransliteration: "Livraison rapide · Garantie 25 ans",

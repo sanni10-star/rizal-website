@@ -30,6 +30,14 @@ const CartDrawer = dynamic(
   { ssr: false },
 );
 
+const FloatingWhatsApp = dynamic(
+  () =>
+    import("@/components/layout/FloatingWhatsApp").then(
+      (m) => m.FloatingWhatsApp,
+    ),
+  { ssr: false },
+);
+
 export function DeferredLayoutWidgets() {
   return (
     <>
@@ -38,6 +46,7 @@ export function DeferredLayoutWidgets() {
       <ExitIntent />
       <CookieBanner />
       <CartDrawer />
+      <FloatingWhatsApp />
     </>
   );
 }
