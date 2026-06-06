@@ -1,19 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ShieldCheck, Clock3, Award, Sparkles, Phone } from "lucide-react";
-import { HeroCarousel } from "@/components/hero/HeroCarousel";
+import { HeroMount } from "@/components/hero/HeroMount";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { BrandCard } from "@/components/catalog/BrandCard";
-import { GammeCard } from "@/components/catalog/GammeCard";
-import { BRANDS_HVAC, climatisationItems, solaireItems, servicesItems } from "@/content/catalog";
+import { HomeDeferredSections, HomeDeferredFaq } from "@/components/home/HomeDeferredSections";
+import { getById } from "@/content/catalog";
 import { realisations } from "@/content/realisations";
-import { gammeHref } from "@/lib/links";
 import { whatsappContactUrl } from "@/lib/whatsapp";
 import { TrustRibbon } from "@/components/cro/TrustRibbon";
 import { BrandComparator } from "@/components/catalog/BrandComparator";
 import { ReviewsBlock } from "@/components/catalog/ReviewsBlock";
-import { Faq } from "@/components/catalog/Faq";
 import { faqGeneral } from "@/content/faq";
 
 const categories = [
@@ -70,24 +67,28 @@ const pillars = [
   },
 ];
 
-const featured = [
-  climatisationItems.find((i) => i.id === "lg-artcool-mirror"),
-  climatisationItems.find((i) => i.id === "trane-vrf"),
-  climatisationItems.find((i) => i.id === "ingelec-cassette-inverter"),
-  climatisationItems.find((i) => i.id === "megalife-bi-split-system"),
-  solaireItems.find((i) => i.id === "kit-solaire-villa-10kwc"),
-  servicesItems.find((i) => i.id === "piscine-debordement"),
-].filter((x): x is NonNullable<typeof x> => Boolean(x));
+const FEATURED_IDS = [
+  "lg-artcool-mirror",
+  "trane-vrf",
+  "ingelec-cassette-inverter",
+  "megalife-bi-split-system",
+  "kit-solaire-villa-10kwc",
+  "piscine-debordement",
+] as const;
+
+const featured = FEATURED_IDS.map((id) => getById(id)).filter(
+  (x): x is NonNullable<typeof x> => Boolean(x),
+);
 
 export default function HomePage() {
   return (
     <>
-      <HeroCarousel />
+      <HeroMount />
 
       <TrustRibbon />
 
       {/* 4 Catégories */}
-      <section className="bg-bone py-20 md:py-28">
+      <section className="cv-auto bg-bone py-20 md:py-28">
         <Container>
           <SectionTitle
             eyebrow="Notre Univers"
@@ -128,77 +129,9 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Marques HVAC — Essaouira blue atmosphere */}
-      <section className="relative overflow-hidden py-20 md:py-28">
-        {/* Blue Essaouira coastal photo */}
-        <Image
-          src="/img/bg/essaouira-blue.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover saturate-[1.15]"
-          quality={80}
-          aria-hidden
-        />
-        {/* Navy brand overlay — deepens the blue, ensures readability */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(170deg, rgba(26,40,69,0.72) 0%, rgba(14,22,42,0.80) 40%, rgba(11,15,28,0.88) 100%)",
-          }}
-          aria-hidden
-        />
-        {/* Subtle blue radial glow — atmospheric depth behind content */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 50% 35%, rgba(56,120,200,0.10) 0%, transparent 70%)",
-          }}
-          aria-hidden
-        />
-        <Container className="relative z-10">
-          <SectionTitle
-            eyebrow="Climatisation"
-            title="Les quatre noms qui définissent l'air de prestige."
-            description="MEGALIFE, INGELEC, LG et TRANE — chacun avec son ADN, tous distribués officiellement par RIZAL."
-            invert
-          />
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8">
-            {BRANDS_HVAC.map((brand) => (
-              <BrandCard key={brand} brand={brand} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <HomeDeferredSections featured={featured} />
 
-      {/* Sélection */}
-      <section className="bg-white py-20">
-        <Container>
-          <div className="flex items-end justify-between gap-4">
-            <SectionTitle
-              eyebrow="Sélection RIZAL"
-              title="Nos gammes phares"
-              description="Une sélection de produits et services demandés par nos clients villas."
-            />
-            <Link
-              href="/climatisation"
-              className="hidden shrink-0 items-center gap-1.5 text-xs font-semibold uppercase tracking-widest2 text-sand-600 hover:text-sand-700 md:inline-flex"
-            >
-              Tout le catalogue <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((item) => (
-              <GammeCard key={item.id} item={item} href={gammeHref(item)} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Piliers */}
-      <section className="bg-ink py-20 text-bone md:py-28">
+      <section className="cv-auto bg-ink py-20 text-bone md:py-28">
         <Container>
           <SectionTitle
             invert
@@ -225,7 +158,7 @@ export default function HomePage() {
       </section>
 
       {/* Réalisations */}
-      <section className="bg-bone py-20 md:py-28">
+      <section className="cv-auto bg-bone py-20 md:py-28">
         <Container>
           <SectionTitle
             eyebrow="Réalisations"
@@ -239,10 +172,12 @@ export default function HomePage() {
                 className="group relative overflow-hidden rounded-3xl bg-white shadow-sm"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-ink">
-                  <img
+                  <Image
                     src={r.image}
                     alt={r.title}
-                    className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
                 </div>
@@ -269,13 +204,11 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <BrandComparator />
-
-      <ReviewsBlock />
-
-      <Container>
-        <Faq items={faqGeneral} />
-      </Container>
+      <div className="cv-auto">
+        <BrandComparator />
+        <ReviewsBlock />
+        <HomeDeferredFaq items={faqGeneral} />
+      </div>
 
       {/* CTA Final */}
       <section className="relative bg-gradient-to-br from-ink to-ink/95 py-20 text-bone md:py-28">

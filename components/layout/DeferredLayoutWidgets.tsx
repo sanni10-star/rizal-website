@@ -25,6 +25,11 @@ const CookieBanner = dynamic(
   { ssr: false },
 );
 
+const CartDrawer = dynamic(
+  () => import("@/components/cart/CartDrawer").then((m) => m.CartDrawer),
+  { ssr: false },
+);
+
 export function DeferredLayoutWidgets() {
   return (
     <>
@@ -32,6 +37,7 @@ export function DeferredLayoutWidgets() {
       <SocialProofLive />
       <ExitIntent />
       <CookieBanner />
+      <CartDrawer />
     </>
   );
 }
