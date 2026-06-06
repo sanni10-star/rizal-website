@@ -28,21 +28,21 @@ const categories = [
     title: "Énergie Solaire",
     eyebrow: "Tier 1 · Hybrides · Lithium",
     description: "Panneaux premium, onduleurs Huawei, batteries Pylontech.",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80",
+    image: "/img/solaire/panels/panneau-tier1-hero.jpg",
     href: "/energie-solaire",
   },
   {
     title: "Piscines & Villa",
     eyebrow: "Construction · Rénovation",
     description: "Piscines à débordement, rénovation totale, délais respectés.",
-    image: "https://images.unsplash.com/photo-1572331165267-854da2b10ccc?w=1600&q=80",
+    image: "/img/products/piscine/construction/piscine-debordement.jpg",
     href: "/services/piscine",
   },
   {
     title: "Traitement d'Eau",
     eyebrow: "Adoucisseurs · Osmose · UV",
     description: "Eau pure dans toute la villa — santé et durabilité.",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&q=80",
+    image: "/img/products/traitement-eau/adoucisseur-villa.jpg",
     href: "/services/traitement-eau",
   },
 ];
@@ -101,10 +101,12 @@ export default function HomePage() {
                 href={cat.href}
                 className="group relative aspect-[3/4] overflow-hidden rounded-3xl bg-ink"
               >
-                <img
+                <Image
                   src={cat.image}
                   alt={cat.title}
-                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/30 to-ink/95" />

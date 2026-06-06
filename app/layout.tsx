@@ -4,15 +4,12 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
-import { CookieBanner } from "@/components/layout/CookieBanner";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata, localBusinessJsonLd } from "@/lib/seo";
 import { BackButtonWrapper } from "@/components/ui/BackButtonWrapper";
-import { StickyMobileCTA } from "@/components/cro/StickyMobileCTA";
-import { ExitIntent } from "@/components/cro/ExitIntent";
-import { SocialProofLive } from "@/components/cro/SocialProofLive";
 import { Analytics } from "@/components/analytics/Analytics";
+import { DeferredLayoutWidgets } from "@/components/layout/DeferredLayoutWidgets";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -61,11 +58,8 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingWhatsApp />
-        <StickyMobileCTA />
-        <SocialProofLive />
-        <ExitIntent />
+        <DeferredLayoutWidgets />
         <CartDrawer />
-        <CookieBanner />
         <Analytics />
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -31,65 +32,77 @@ export function HeroCarousel() {
     <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-ink text-bone">
       <div ref={emblaRef} className="h-full overflow-hidden">
         <div className="flex h-full">
-          {heroSlides.map((slide) => (
-            <article
-              key={slide.id}
-              className="relative h-full w-full shrink-0 grow-0 basis-full"
-            >
-              <img
-                src={slide.image}
-                alt={slide.imageAlt}
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/30 to-ink" />
-              <div className="absolute inset-0 bg-gradient-ink" />
+          {heroSlides.map((slide, index) => {
+            const isNear = Math.abs(index - selected) <= 1;
 
-              <div className="relative z-10 flex h-full flex-col justify-end pb-24 md:pb-32">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="max-w-3xl">
-                    <div
-                      dir="rtl"
-                      className="mb-5 inline-flex items-center gap-2 rounded-full border border-sand-400/40 bg-ink/50 px-4 py-2 backdrop-blur"
-                    >
-                      <span className="font-arabic text-sm font-semibold text-sand-300 md:text-base">
-                        {slide.badgeAr}
-                      </span>
-                    </div>
+            return (
+              <article
+                key={slide.id}
+                className="relative h-full w-full shrink-0 grow-0 basis-full"
+              >
+                {isNear ? (
+                  <Image
+                    src={slide.image}
+                    alt={slide.imageAlt}
+                    fill
+                    priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-ink" aria-hidden />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/30 to-ink" />
+                <div className="absolute inset-0 bg-gradient-ink" />
 
-                    <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-bone md:text-6xl lg:text-7xl">
-                      {slide.titleFr}
-                    </h1>
-                    <p className="mt-5 max-w-xl text-base text-bone/80 md:text-lg">
-                      {slide.subtitleFr}
-                    </p>
-                    <div className="mt-8 flex flex-wrap gap-3">
-                      <Link
-                        href={slide.ctaPrimary.href}
-                        className="inline-flex h-14 items-center rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-xl shadow-brand/30 transition hover:bg-brand-600"
+                <div className="relative z-10 flex h-full flex-col justify-end pb-24 md:pb-32">
+                  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-3xl">
+                      <div
+                        dir="rtl"
+                        className="mb-5 inline-flex items-center gap-2 rounded-full border border-sand-400/40 bg-ink/50 px-4 py-2 backdrop-blur"
                       >
-                        {slide.ctaPrimary.label}
-                      </Link>
-                      <a
-                        href={whatsappContactUrl("expert")}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex h-14 items-center gap-2 rounded-full border border-bone/30 bg-bone/5 px-7 text-sm font-semibold text-bone backdrop-blur transition hover:bg-bone/10"
-                      >
-                        <MessageCircle className="h-4 w-4" />
-                        Parler à un Expert
-                      </a>
+                        <span className="font-arabic text-sm font-semibold text-sand-300 md:text-base">
+                          {slide.badgeAr}
+                        </span>
+                      </div>
+
+                      <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-bone md:text-6xl lg:text-7xl">
+                        {slide.titleFr}
+                      </h1>
+                      <p className="mt-5 max-w-xl text-base text-bone/80 md:text-lg">
+                        {slide.subtitleFr}
+                      </p>
+                      <div className="mt-8 flex flex-wrap gap-3">
+                        <Link
+                          href={slide.ctaPrimary.href}
+                          className="inline-flex h-14 items-center rounded-full bg-brand px-7 text-sm font-semibold text-white shadow-xl shadow-brand/30 transition hover:bg-brand-600"
+                        >
+                          {slide.ctaPrimary.label}
+                        </Link>
+                        <a
+                          href={whatsappContactUrl("expert")}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex h-14 items-center gap-2 rounded-full border border-bone/30 bg-bone/5 px-7 text-sm font-semibold text-bone backdrop-blur transition hover:bg-bone/10"
+                        >
+                          <MessageCircle className="h-4 w-4" />
+                          Parler à un Expert
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3">
         <button
+          type="button"
           aria-label="Précédent"
           onClick={() => emblaApi?.scrollPrev()}
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-bone/30 bg-ink/40 text-bone backdrop-blur hover:bg-ink/60"
@@ -100,6 +113,7 @@ export function HeroCarousel() {
           {heroSlides.map((s, i) => (
             <button
               key={s.id}
+              type="button"
               aria-label={`Aller au slide ${i + 1}`}
               onClick={() => emblaApi?.scrollTo(i)}
               className={cn(
@@ -110,6 +124,7 @@ export function HeroCarousel() {
           ))}
         </div>
         <button
+          type="button"
           aria-label="Suivant"
           onClick={() => emblaApi?.scrollNext()}
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-bone/30 bg-ink/40 text-bone backdrop-blur hover:bg-ink/60"
