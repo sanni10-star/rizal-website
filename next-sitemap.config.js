@@ -13,6 +13,6 @@ module.exports = {
   ],
   robotsTxtOptions: {
     policies: [{ userAgent: "*", allow: "/" }],
-    additionalSitemaps: ["https://rizal.click/sitemap.xml"],
+    additionalSitemaps: [],
   },
 };
