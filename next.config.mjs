@@ -39,6 +39,25 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/sitemap.xml",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800",
+          },
+          { key: "Content-Type", value: "application/xml; charset=utf-8" },
+        ],
+      },
+      {
+        source: "/robots.txt",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, s-maxage=86400",
+          },
+        ],
+      },
     ];
   },
 };
