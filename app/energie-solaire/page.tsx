@@ -2,13 +2,10 @@ import type { Metadata } from "next";
 import { Sun, Battery, Plug } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { GammeCard } from "@/components/catalog/GammeCard";
+import { SolairePhotovoltaiqueMarques } from "@/components/solaire/SolairePhotovoltaiqueMarques";
 import { SolairePanneauxRubrique } from "@/components/solaire/SolairePanneauxRubrique";
 import { SolaireOnduloursRubrique } from "@/components/solaire/SolaireOnduloursRubrique";
 import { SolaireBatteriesRubrique } from "@/components/solaire/SolaireBatteriesRubrique";
-import { solaireItems } from "@/content/catalog";
-import type { CatalogItem } from "@/types/catalog";
-import { gammeHref } from "@/lib/links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -30,17 +27,7 @@ const benefits = [
   { icon: Battery, title: "Batteries LiFePO4", text: "Dyness, MUST, Elitec — 6 000+ cycles, empilables, garantie longue." },
 ];
 
-function isPanneauItem(item: CatalogItem) {
-  return item.id.startsWith("panneau-");
-}
-
-const EXCLUDED_PANNEAU_IDS = new Set(["panneau-jinko-tiger-neo", "panneau-longi-himo-6"]);
-
 export default function SolairePage() {
-  const panneauItems = solaireItems
-    .filter(isPanneauItem)
-    .filter((i) => !EXCLUDED_PANNEAU_IDS.has(i.id));
-
   return (
     <>
       <section className="bg-ink pt-28 pb-20 text-bone">
@@ -86,18 +73,21 @@ export default function SolairePage() {
           <div className="mt-12 border-b border-ink/8 pb-12">
             <h2 className="font-display text-2xl text-ink md:text-3xl">Panneaux photovoltaïques</h2>
             <p className="mt-2 max-w-2xl text-sm text-ink/70">
-              Modules Tier 1 proposés selon votre projet — rendement élevé et garanties constructeur sur devis.
+              Modules Tier 1 de 500 à 700 Wc — Jinko, JA Solar, Trina et Canadian Solar.
+              Rendement élevé et garanties constructeur sur devis.
             </p>
 
-            <SolairePanneauxRubrique />
+            <SolairePhotovoltaiqueMarques />
 
-            {panneauItems.length > 0 ? (
-              <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-                {panneauItems.map((item) => (
-                  <GammeCard key={item.id} item={item} href={gammeHref(item)} />
-                ))}
-              </div>
-            ) : null}
+            <div className="mt-14 border-t border-ink/8 pt-12">
+              <h3 className="font-display text-xl text-ink md:text-2xl">
+                Solaire thermique — chauffe-eau
+              </h3>
+              <p className="mt-2 max-w-2xl text-sm text-ink/70">
+                Thermosiphons LATO / Teliko et capteurs Sonne Aktion pour votre eau chaude sanitaire.
+              </p>
+              <SolairePanneauxRubrique />
+            </div>
 
           </div>
 

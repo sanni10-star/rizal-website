@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Panneau JA Solar DeepBlue">
+  <defs>
+    <linearGradient id="jaf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d0d8e4"/>
+      <stop offset="100%" stop-color="#9098a4"/>
+    </linearGradient>
+  </defs>
+  <rect x="20" y="30" width="360" height="180" rx="4" fill="url(#jaf)" stroke="#0054A4" stroke-width="3"/>
+  <rect x="28" y="38" width="344" height="164" rx="2" fill="#0c1829"/>
+  <g fill="#152238" stroke="#0a1220" stroke-width="0.5">
+    <rect x="32" y="42" width="38" height="48"/><rect x="74" y="42" width="38" height="48"/><rect x="116" y="42" width="38" height="48"/><rect x="158" y="42" width="38" height="48"/><rect x="200" y="42" width="38" height="48"/><rect x="242" y="42" width="38" height="48"/><rect x="284" y="42" width="38" height="48"/><rect x="326" y="42" width="42" height="48"/>
+    <rect x="32" y="94" width="38" height="48"/><rect x="74" y="94" width="38" height="48"/><rect x="116" y="94" width="38" height="48"/><rect x="158" y="94" width="38" height="48"/><rect x="200" y="94" width="38" height="48"/><rect x="242" y="94" width="38" height="48"/><rect x="284" y="94" width="38" height="48"/><rect x="326" y="94" width="42" height="48"/>
+    <rect x="32" y="146" width="38" height="52"/><rect x="74" y="146" width="38" height="52"/><rect x="116" y="146" width="38" height="52"/><rect x="158" y="146" width="38" height="52"/><rect x="200" y="146" width="38" height="52"/><rect x="242" y="146" width="38" height="52"/><rect x="284" y="146" width="38" height="52"/><rect x="326" y="146" width="42" height="52"/>
+  </g>
+  <rect x="155" y="200" width="90" height="14" rx="2" fill="#0054A4"/>
+  <text x="200" y="222" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#0054A4">DeepBlue 4.0 · 580W</text>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-label="Trina Solar">
+  <circle cx="14" cy="20" r="10" fill="#E60012"/>
+  <text x="32" y="28" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#E60012">TRINA</text>
+  <text x="118" y="28" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#003087">SOLAR</text>
+</svg>
