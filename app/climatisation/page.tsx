@@ -10,10 +10,16 @@ import { gammeHref } from "@/lib/links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Climatisation Premium au Maroc — MEGALIFE · INGELEC · LG · TRANE",
+  title: "Climatiseur Essaouira — MEGALIFE, INGELEC, LG, TRANE",
   description:
-    "Toutes les gammes de climatisation distribuées par RIZAL : encastrable, multi-split, mobile. Marques officielles MEGALIFE, INGELEC, LG, TRANE. Installation certifiée, garantie constructeur.",
+    "Achat et installation de climatiseur à Essaouira : split, encastrable, mobile. Marques officielles MEGALIFE, INGELEC, LG, TRANE. Devis gratuit, garantie constructeur.",
   path: "/climatisation",
+  keywords: [
+    "climatiseur Essaouira",
+    "climatisation Essaouira",
+    "split Essaouira",
+    "MEGALIFE Essaouira",
+  ],
 });
 
 export default function ClimatisationPage() {
@@ -34,12 +40,12 @@ export default function ClimatisationPage() {
             Climatisation — Catalogue Complet
           </p>
           <h1 className="mt-3 font-display text-5xl md:text-7xl">
-            L&apos;air des villas d&apos;exception.
+            Climatiseur à Essaouira — l&apos;air des villas d&apos;exception.
           </h1>
           <p className="mt-5 max-w-2xl text-base text-bone/75 md:text-lg">
-            MEGALIFE, INGELEC, LG et TRANE — quatre marques officielles, trois
-            formats (encastrable, multi-split, mobile), une seule promesse :
-            le confort sans compromis dans votre villa au Maroc.
+            MEGALIFE, INGELEC, LG et TRANE — vente et pose de climatiseur à
+            Essaouira : encastrable, multi-split et mobile, avec installation
+            certifiée et garantie constructeur.
           </p>
         </Container>
       </section>
@@ -78,8 +84,8 @@ export default function ClimatisationPage() {
         <Container className="relative z-10">
           <SectionTitle
             eyebrow="Marques officielles"
-            title="Choisissez votre marque"
-            description="Quatre marques officielles, chacune avec son identité — cliquez pour explorer les gammes."
+            title="Choisissez votre climatiseur à Essaouira"
+            description="Quatre marques officielles disponibles dans notre showroom Essaouira — cliquez pour explorer les gammes."
             align="center"
             invert
           />

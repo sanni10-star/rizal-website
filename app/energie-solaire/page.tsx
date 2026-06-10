@@ -12,10 +12,16 @@ import { gammeHref } from "@/lib/links";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Énergie Solaire Premium au Maroc — Panneaux Tier 1, Onduleurs, Batteries",
+  title: "Panneau Solaire Essaouira — Kits Photovoltaïques Premium",
   description:
-    "Panneaux Tier 1 sur devis, onduleurs SolaX / Solis / Deye, batteries Dyness / MUST / Elitec LiFePO4 — solutions solaires premium au Maroc.",
+    "Panneau solaire à Essaouira : modules Tier 1, onduleurs SolaX / Solis / Deye, batteries LiFePO4. Étude gratuite et installation certifiée par RIZAL.",
   path: "/energie-solaire",
+  keywords: [
+    "panneau solaire Essaouira",
+    "photovoltaïque Essaouira",
+    "kit solaire Essaouira",
+    "batterie solaire Essaouira",
+  ],
 });
 
 const benefits = [
@@ -43,11 +49,11 @@ export default function SolairePage() {
             Énergie Solaire — Villa Autonome
           </p>
           <h1 className="mt-3 font-display text-5xl md:text-7xl">
-            Votre villa, alimentée par le soleil.
+            Panneau solaire à Essaouira — votre villa alimentée par le soleil.
           </h1>
           <p className="mt-5 max-w-2xl text-base text-bone/75 md:text-lg">
-            RIZAL conçoit, installe et garantit des solutions photovoltaïques
-            haut de gamme : panneaux Tier 1, onduleurs hybrides SolaX / Solis / Deye,
+            RIZAL conçoit, installe et garantit des panneaux solaires à
+            Essaouira : modules Tier 1, onduleurs hybrides SolaX / Solis / Deye,
             batteries LiFePO4 Dyness / MUST / Elitec. Autonomie quasi-totale en
             autoconsommation.
           </p>
@@ -73,8 +79,8 @@ export default function SolairePage() {
         <Container>
           <SectionTitle
             eyebrow="Catalogue Solaire"
-            title="Panneaux, onduleurs & batteries"
-            description="Tous les composants RIZAL pour bâtir votre installation solaire."
+            title="Panneau solaire, onduleurs & batteries à Essaouira"
+            description="Tous les composants RIZAL pour bâtir votre installation photovoltaïque à Essaouira et dans la région."
           />
 
           <div className="mt-12 border-b border-ink/8 pb-12">

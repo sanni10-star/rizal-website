@@ -4,10 +4,15 @@ import { catalog, getByCategory } from "@/content/catalog";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Rénovation de Villa au Maroc — Clé-en-main, Délais Respectés",
+  title: "Construction & Rénovation Villa Essaouira — Clé-en-main",
   description:
-    "RIZAL coordonne tous les corps de métier pour rénover votre villa : gros œuvre, climatisation, marbre, domotique. Un seul interlocuteur, délais et budget contractualisés.",
+    "Construction et rénovation de villa à Essaouira : gros œuvre, climatisation, marbre, domotique. RIZAL, un seul interlocuteur, délais et budget contractualisés.",
   path: "/services/renovation-villa",
+  keywords: [
+    "construction Essaouira",
+    "rénovation villa Essaouira",
+    "constructeur Essaouira",
+  ],
 });
 
 const items = getByCategory("renovation");
@@ -32,8 +37,8 @@ export default function RenovationPage() {
   return (
     <ServicePageShell
       eyebrow="Rénovation de Villa"
-      title="Votre villa, réinventée — sans surprise."
-      intro="Un seul interlocuteur RIZAL coordonne tous les corps de métier : gros œuvre, électricité, plomberie, climatisation, marbre, domotique. Délais et budget contractualisés dès la signature, garantie décennale."
+      title="Construction & rénovation de villa à Essaouira — sans surprise."
+      intro="Un seul interlocuteur RIZAL coordonne tous les corps de métier à Essaouira et région : gros œuvre, électricité, plomberie, climatisation, marbre, domotique. Délais et budget contractualisés, garantie décennale."
       heroImage="/img/realisations/villa-ghazoua/villa-hero-enhanced.jpg"
       items={items}
       process={process}

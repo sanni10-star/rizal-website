@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/energie-solaire",
     "/energie-solaire/marques-solaire-thermique",
     "/services/piscine",
+    "/services/droguerie-essaouira",
+    "/services/construction-essaouira",
     "/services/renovation-villa",
     "/services/traitement-eau",
     "/realisations",
@@ -46,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${path}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: path === "/" ? 1.0 : 0.7,
+    priority:
+      path === "/"
+        ? 1.0
+        : path === "/services/droguerie-essaouira" ||
+            path === "/services/construction-essaouira"
+          ? 0.95
+          : 0.7,
   }));
 }

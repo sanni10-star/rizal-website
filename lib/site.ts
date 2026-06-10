@@ -8,10 +8,32 @@ export const SITE = {
   whatsappPhone: process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "212630730350",
   whatsappDisplay: "06 30 73 03 50",
   email: "entrepriserizal@gmail.com",
-  address: "Essaouira, Maroc",
-  googleMaps: "https://maps.google.com/maps/search/Rizal%20Sarl/@31.510543823242188,-9.760002136230469,17z?hl=en",
-  cities: ["Essaouira"] as const,
+  address: "Lot N°29, Avenue El Aqaba, Tamanar 44000",
+  addressDisplay: "Lot N°29, Avenue El Aqaba, Tamanar 44000 — province d'Essaouira",
+  googleMaps:
+    "https://maps.google.com/maps/search/Rizal+Lot+N29+Avenue+el+aqaba+Tamanar+44000/@31.7690,-9.2720,17z?hl=fr",
+  cities: ["Essaouira", "Tamanar", "Ghazoua", "Smimou"] as const,
   hours: "Lundi - Samedi : 9h - 19h",
+  localSeo: {
+    city: "Essaouira",
+    locality: "Tamanar",
+    region: "Marrakech-Safi",
+    country: "MA",
+    streetAddress: "Lot N°29, Avenue El Aqaba",
+    postalCode: "44000",
+    geo: {
+      latitude: 31.769,
+      longitude: -9.272,
+    },
+    keywords: [
+      "droguerie Essaouira",
+      "construction Essaouira",
+      "climatiseur Essaouira",
+      "piscine Essaouira",
+      "panneau solaire Essaouira",
+      "quincaillerie Essaouira",
+    ] as const,
+  },
   socials: {
     facebook: "https://facebook.com/rizal.maroc",
     instagram: "https://instagram.com/rizal.maroc",
@@ -26,7 +48,7 @@ export const SITE = {
     ice: "À compléter",
     if: "À compléter",
     capital: "À compléter",
-    siege: "Essaouira, Maroc",
+    siege: "Lot N°29, Avenue El Aqaba, Tamanar 44000",
   },
 } as const;
 

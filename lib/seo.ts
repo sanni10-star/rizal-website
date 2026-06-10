@@ -6,6 +6,7 @@ type SeoArgs = {
   description?: string;
   path?: string;
   image?: string;
+  keywords?: string[];
 };
 
 export function buildMetadata({
@@ -13,21 +14,28 @@ export function buildMetadata({
   description,
   path = "/",
   image,
+  keywords,
 }: SeoArgs = {}): Metadata {
+  const { localSeo } = SITE;
+  const city = localSeo.city;
+
   const fullTitle = title
     ? `${title} | ${SITE.name} — ${SITE.authority}`
-    : `${SITE.name} — ${SITE.tagline} | ${SITE.authority}`;
+    : `Droguerie & Construction ${city} — Quincaillerie, Climatiseur, Piscine | ${SITE.name}`;
 
   const desc =
     description ??
-    `RIZAL, ${SITE.authority} pour la climatisation premium, l'énergie solaire, la rénovation de villas, la construction de piscines et le traitement d'eau. MEGALIFE · INGELEC · LG · TRANE. Délais respectés, garantie constructeur.`;
+    `RIZAL à ${city} : droguerie, construction, climatiseur, piscine et panneau solaire. Showroom à Tamanar, intervention Essaouira et région. Devis gratuit.`;
 
   const url = `${SITE.url}${path}`;
   const ogImage = image || SITE.ogImage;
+  const metaKeywords = keywords ?? [...localSeo.keywords];
+  const { latitude, longitude } = localSeo.geo;
 
   return {
     title: fullTitle,
     description: desc,
+    keywords: metaKeywords,
     metadataBase: new URL(SITE.url),
     alternates: {
       canonical: url,
@@ -44,7 +52,14 @@ export function buildMetadata({
       siteName: SITE.name,
       locale: "fr_MA",
       type: "website",
-      images: [{ url: ogImage, width: 1200, height: 630, alt: SITE.name }],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${SITE.name} — quincaillerie et droguerie à ${city}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -54,28 +69,83 @@ export function buildMetadata({
     },
     robots: { index: true, follow: true },
     icons: { icon: "/favicon.svg" },
+    other: {
+      "geo.region": "MA-ES",
+      "geo.placename": city,
+      "geo.position": `${latitude};${longitude}`,
+      ICBM: `${latitude}, ${longitude}`,
+    },
   };
 }
 
 export function localBusinessJsonLd() {
+  const { localSeo } = SITE;
+
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "Store", "HomeImprovementStore", "GeneralContractor"],
     "@id": `${SITE.url}/#business`,
     name: SITE.name,
-    description: `${SITE.tagline}. ${SITE.authority}.`,
+    description: `Droguerie, quincaillerie et construction à ${localSeo.city} et province : climatiseur, piscine, panneau solaire. ${SITE.tagline}.`,
     url: SITE.url,
     telephone: `+${SITE.whatsappPhone}`,
     email: SITE.email,
+    image: `${SITE.url}${SITE.ogImage}`,
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressCountry: "MA",
-      addressLocality: "Casablanca",
+      streetAddress: localSeo.streetAddress,
+      addressLocality: localSeo.locality,
+      addressRegion: localSeo.region,
+      postalCode: localSeo.postalCode,
+      addressCountry: localSeo.country,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: localSeo.geo.latitude,
+      longitude: localSeo.geo.longitude,
     },
     areaServed: SITE.cities.map((city) => ({ "@type": "City", name: city })),
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "09:00",
+        closes: "19:00",
+      },
+    ],
     sameAs: Object.values(SITE.socials),
-    openingHours: "Mo-Sa 09:00-19:00",
-    image: `${SITE.url}${SITE.ogImage}`,
+    knowsAbout: [...localSeo.keywords],
+    hasMap: SITE.googleMaps,
+  };
+}
+
+export function localServiceJsonLd(args: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  const { localSeo } = SITE;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: args.name,
+    description: args.description,
+    url: `${SITE.url}${args.path}`,
+    provider: { "@id": `${SITE.url}/#business` },
+    areaServed: {
+      "@type": "City",
+      name: localSeo.city,
+    },
+    serviceType: args.name,
   };
 }
 

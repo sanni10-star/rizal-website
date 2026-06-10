@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ShieldCheck, Clock3, Award, Sparkles, Phone } from "lucide-react";
+import { buildMetadata } from "@/lib/seo";
 import { HeroMount } from "@/components/hero/HeroMount";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -80,12 +82,84 @@ const featured = FEATURED_IDS.map((id) => getById(id)).filter(
   (x): x is NonNullable<typeof x> => Boolean(x),
 );
 
+const localServices = [
+  {
+    title: "Climatiseur Essaouira",
+    description:
+      "Split, encastrable et mobile — marques MEGALIFE, INGELEC, LG et TRANE. Vente, pose et SAV à Essaouira.",
+    href: "/climatisation",
+  },
+  {
+    title: "Piscine Essaouira",
+    description:
+      "Construction sur-mesure, pompes Astralpool & Waterpool, accessoires et garantie décennale pour votre bassin.",
+    href: "/services/piscine",
+  },
+  {
+    title: "Panneau solaire Essaouira",
+    description:
+      "Kits photovoltaïques Tier 1, onduleurs hybrides et batteries LiFePO4 — étude et installation locale.",
+    href: "/energie-solaire",
+  },
+  {
+    title: "Droguerie Essaouira",
+    description:
+      "Quincaillerie, plomberie, électricité et matériaux hardware pour vos chantiers et rénovations à Essaouira.",
+    href: "/services/droguerie-essaouira",
+  },
+  {
+    title: "Construction Essaouira",
+    description:
+      "Villas clé-en-main, piscines et rénovation — entreprise de construction locale, garantie décennale.",
+    href: "/services/construction-essaouira",
+  },
+] as const;
+
+export const metadata: Metadata = buildMetadata({
+  title: "Droguerie & Construction Essaouira — Quincaillerie, Climatiseur, Piscine",
+  description:
+    "RIZAL à Essaouira : droguerie, construction, climatiseur, piscine et panneau solaire. Showroom Tamanar, devis gratuit, intervention Essaouira et région.",
+  path: "/",
+});
+
 export default function HomePage() {
   return (
     <>
       <HeroMount />
 
       <TrustRibbon />
+
+      <section className="cv-auto border-b border-ink/5 bg-white py-16 md:py-20">
+        <Container>
+          <h2 className="font-display text-3xl text-ink md:text-5xl">
+            Votre magasin hardware à Essaouira
+          </h2>
+          <p className="mt-4 max-w-3xl text-base text-ink/70 md:text-lg">
+            RIZAL regroupe sous un même toit les expertises les plus demandées à
+            Essaouira : climatisation, piscine, énergie solaire et droguerie
+            pour particuliers et professionnels.
+          </p>
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {localServices.map((service) => (
+              <article
+                key={service.title}
+                className="rounded-3xl border border-ink/8 bg-bone p-6"
+              >
+                <h3 className="font-display text-2xl text-ink">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm text-ink/70">{service.description}</p>
+                <Link
+                  href={service.href}
+                  className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest2 text-sand-600 hover:text-ink"
+                >
+                  En savoir plus <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* 4 Catégories */}
       <section className="cv-auto bg-bone py-20 md:py-28">

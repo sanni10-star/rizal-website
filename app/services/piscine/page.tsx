@@ -10,10 +10,16 @@ import { whatsappContactUrl, whatsappLinkForItem } from "@/lib/whatsapp";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Construction de Piscines à Essaouira — Délais Respectés",
+  title: "Piscine Essaouira — Construction & Équipements",
   description:
-    "RIZAL construit des piscines sur-mesure : skimmer classique, débordement, couloir de nage. Pompes Astralpool & Waterpool. Garantie décennale.",
+    "Construction de piscine à Essaouira : skimmer, débordement, couloir de nage. Pompes Astralpool & Waterpool, garantie décennale. Devis gratuit RIZAL.",
   path: "/services/piscine",
+  keywords: [
+    "piscine Essaouira",
+    "construction piscine Essaouira",
+    "pompe piscine Essaouira",
+    "Astralpool Essaouira",
+  ],
 });
 
 const piscineConstruction = getByCategory("piscine").filter(
@@ -68,11 +74,11 @@ export default function PiscinePage() {
             Piscine & Villa
           </p>
           <h1 className="mt-3 font-display text-5xl md:text-7xl">
-            Des piscines dignes de vos plus belles villas.
+            Piscine à Essaouira — des bassins dignes de vos plus belles villas.
           </h1>
           <p className="mt-5 max-w-2xl text-base text-bone/80 md:text-lg">
-            De la première étude à la première baignade, RIZAL maîtrise toutes
-            les étapes : construction, équipements, pompes de marque et
+            De la première étude à la première baignade, RIZAL construit votre
+            piscine à Essaouira : gros œuvre, équipements, pompes de marque et
             accessoires. Délais 8 à 16 semaines, garantie décennale.
           </p>
 
@@ -114,8 +120,8 @@ export default function PiscinePage() {
         <Container>
           <SectionTitle
             eyebrow="Équipements Piscine"
-            title="Nos marques de pompes & filtration"
-            description="Découvrez notre gamme complète de pompes, filtres et accessoires Astralpool et Waterpool pour votre piscine."
+            title="Pompes & filtration pour piscine à Essaouira"
+            description="Pompes, filtres et accessoires Astralpool et Waterpool disponibles à Essaouira pour votre bassin."
           />
           <PiscinePompesRubrique />
         </Container>

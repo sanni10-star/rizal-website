@@ -70,6 +70,8 @@ export function Footer() {
               Services
             </h3>
             <ul className="space-y-2 text-sm text-bone/80">
+              <li><Link className="hover:text-sand-300" href="/services/droguerie-essaouira">Droguerie Essaouira</Link></li>
+              <li><Link className="hover:text-sand-300" href="/services/construction-essaouira">Construction Essaouira</Link></li>
               <li><Link className="hover:text-sand-300" href="/services/piscine">Construction Piscine</Link></li>
               <li><Link className="hover:text-sand-300" href="/services/renovation-villa">Rénovation Villa</Link></li>
               <li><Link className="hover:text-sand-300" href="/services/traitement-eau">Traitement d&apos;Eau</Link></li>
@@ -102,7 +104,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-sand-300 underline decoration-bone/20 underline-offset-2"
                 >
-                  Essaouira, Maroc
+                  {SITE.addressDisplay}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">

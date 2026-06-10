@@ -7,8 +7,9 @@ import { buildMetadata } from "@/lib/seo";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact",
-  description: "Contactez RIZAL à Essaouira — WhatsApp, téléphone, email. Showroom multi-services : plomberie, énergie solaire, climatisation, piscine.",
+  title: "Contact RIZAL Essaouira — Droguerie & Construction",
+  description:
+    "Contactez RIZAL à Essaouira et Tamanar — droguerie, construction, climatisation, solaire, piscine. WhatsApp, téléphone, email. Showroom Avenue El Aqaba.",
   path: "/contact",
 });
 
@@ -82,7 +83,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="text-lg font-medium text-ink hover:text-sand-700 underline decoration-ink/20 underline-offset-4 hover:decoration-sand-700/50"
                     >
-                      Essaouira, Maroc — Voir sur Google Maps
+                      {SITE.addressDisplay}
                     </a>
                   </div>
                 </li>
@@ -130,8 +131,8 @@ export default function ContactPage() {
             Ouvrir dans Google Maps
           </a>
           <iframe
-            title="Localisation RIZAL Essaouira"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3000!2d-9.760002136230469!3d31.510543823242188!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDMwJzM4LjAiTiA5wrA0NSczNi4wIlc!5e0!3m2!1sfr!2sma!4v1"
+            title="Localisation RIZAL Tamanar — Essaouira"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397!2d-9.272!3d31.769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDQ2JzA4LjQiTiA5wrAxNicyMC4wIlc!5e0!3m2!1sfr!2sma!4v1"
             width="100%"
             height="450"
             style={{ border: 0 }}
