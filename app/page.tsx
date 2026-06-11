@@ -141,7 +141,7 @@ export default function HomePage() {
             title="Huit expertises, une seule signature."
             description="RIZAL réunit sous un même toit les expertises les plus exigeantes de l'habitat de prestige au Maroc."
           />
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8">
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {categories.map((cat) => (
               <Link
                 key={cat.title}
@@ -152,19 +152,22 @@ export default function HomePage() {
                   src={cat.image}
                   alt={cat.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
                   className="object-cover transition duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/30 to-ink/95" />
-                <div className="absolute inset-0 flex flex-col justify-end p-6 text-bone">
+                <div className="absolute inset-0 bg-gradient-to-b from-ink/5 via-ink/25 to-ink/[0.97]" />
+                <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-ink via-ink/90 to-transparent" />
+                <div className="absolute inset-0 flex flex-col justify-end p-5 text-bone sm:p-6">
                   <p className="text-[10px] font-semibold uppercase tracking-brand text-sand-300">
                     {cat.eyebrow}
                   </p>
-                  <h3 className="mt-2 font-display text-2xl md:text-3xl">
+                  <h3 className="mt-2 font-display text-xl leading-tight sm:text-2xl xl:text-[1.65rem]">
                     {cat.title}
                   </h3>
-                  <p className="mt-2 text-sm text-bone/70">{cat.description}</p>
+                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-bone/75">
+                    {cat.description}
+                  </p>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest2 text-sand-300">
                     Découvrir <ArrowUpRight className="h-3.5 w-3.5" />
                   </span>
