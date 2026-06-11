@@ -19,6 +19,19 @@ const CATEGORY_RULES: Record<Category, string[]> = {
     "adoucisseur-villa",
   ],
   "traitement-eau": ["osmoseur-domestique-6etages", "lampe-uv-sterilisation"],
+  automatisation: ["auto-euromatic-techno", "auto-key-coulissant"],
+  securite: [
+    "sec-hikvision-ax-pro",
+    "sec-hikvision-fumee",
+    "sec-hikvision-colorvu",
+    "sec-imou-cruiser-dual",
+  ],
+  pompes: ["pomp-deversopompes-immergee", "pomp-ecwat-surpresseur"],
+  "chauffe-eau": [
+    "ces-megalife-slim-silver",
+    "ces-megalife-blanc-elcb",
+    "ces-megalife-flashheat",
+  ],
   accessoire: [],
 };
 

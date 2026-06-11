@@ -14,37 +14,9 @@ import { TrustRibbon } from "@/components/cro/TrustRibbon";
 import { BrandComparator } from "@/components/catalog/BrandComparator";
 import { ReviewsBlock } from "@/components/catalog/ReviewsBlock";
 import { faqGeneral } from "@/content/faq";
+import { HOME_CATEGORY_CARDS } from "@/content/navigation";
 
-const categories = [
-  {
-    title: "Climatisation",
-    eyebrow: "MEGALIFE · INGELEC · LG · TRANE",
-    description: "Encastrable, Multi-split, Mobile — toutes les gammes officielles.",
-    image: "/img/categories/climatisation.jpg",
-    href: "/climatisation",
-  },
-  {
-    title: "Énergie Solaire",
-    eyebrow: "Tier 1 · Hybrides · Lithium",
-    description: "Panneaux premium, onduleurs Huawei, batteries Pylontech.",
-    image: "/img/solaire/panels/panneau-tier1-hero.jpg",
-    href: "/energie-solaire",
-  },
-  {
-    title: "Piscines & Villa",
-    eyebrow: "Construction · Rénovation",
-    description: "Piscines à débordement, rénovation totale, délais respectés.",
-    image: "/img/products/piscine/construction/piscine-debordement.jpg",
-    href: "/services/piscine",
-  },
-  {
-    title: "Traitement d'Eau",
-    eyebrow: "Adoucisseurs · Osmose · UV",
-    description: "Eau pure dans toute la villa — santé et durabilité.",
-    image: "/img/products/traitement-eau/adoucisseur-villa.jpg",
-    href: "/services/traitement-eau",
-  },
-];
+const categories = HOME_CATEGORY_CARDS;
 
 const pillars = [
   {
@@ -166,10 +138,10 @@ export default function HomePage() {
         <Container>
           <SectionTitle
             eyebrow="Notre Univers"
-            title="Quatre expertises, une seule signature."
+            title="Huit expertises, une seule signature."
             description="RIZAL réunit sous un même toit les expertises les plus exigeantes de l'habitat de prestige au Maroc."
           />
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8">
             {categories.map((cat) => (
               <Link
                 key={cat.title}

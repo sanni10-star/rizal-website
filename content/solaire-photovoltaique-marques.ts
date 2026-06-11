@@ -7,14 +7,21 @@ export type SolairePvMarque = {
   tagline: string;
   description: string;
   powerRange: string;
+  /** Photo installation sur toiture / villa */
+  installImage: string;
+  installImageAlt: string;
   image: string;
   logo: string;
   accent: string;
+  /** Couleur secondaire logo (ex. point rouge Trina, rouge Canadian Solar). */
+  accentSecondary?: string;
   accentLight: string;
   bgGradient: string;
 };
 
 const PANELS = "/img/solaire/panels";
+const PRODUCTS = `${PANELS}/products`;
+const INSTALL = `${PANELS}/install/essaouira`;
 
 export const solairePhotovoltaiqueMarques: SolairePvMarque[] = [
   {
@@ -26,7 +33,10 @@ export const solairePhotovoltaiqueMarques: SolairePvMarque[] = [
     description:
       "Cellules N-Type TOPCon, rendement jusqu'à 23 %, excellent en climat chaud — idéal pour les toitures villa au Maroc.",
     powerRange: "500 – 620 Wc",
-    image: `${PANELS}/jinko-tiger-neo-panel.svg`,
+    installImage: `${INSTALL}/jinko-essaouira-install.jpg`,
+    installImageAlt:
+      "Panneaux Jinko Tiger Neo installés sur villa blanche — Essaouira",
+    image: `${PRODUCTS}/jinko-tiger-neo-product.jpg`,
     logo: `${PANELS}/logo-jinko.svg`,
     accent: "#1B8F3A",
     accentLight: "#E8F5EC",
@@ -41,7 +51,10 @@ export const solairePhotovoltaiqueMarques: SolairePvMarque[] = [
     description:
       "Modules monocristallins DeepBlue 4.0, faible dégradation, performance stable — référence pour autoconsommation résidentielle.",
     powerRange: "500 – 600 Wc",
-    image: `${PANELS}/ja-solar-panel.svg`,
+    installImage: `${INSTALL}/ja-solar-essaouira-install.jpg`,
+    installImageAlt:
+      "Installation JA Solar DeepBlue sur villa marocaine — Essaouira",
+    image: `${PRODUCTS}/ja-solar-deepblue-product.jpg`,
     logo: `${PANELS}/logo-ja-solar.svg`,
     accent: "#0054A4",
     accentLight: "#E6F0FA",
@@ -56,11 +69,15 @@ export const solairePhotovoltaiqueMarques: SolairePvMarque[] = [
     description:
       "Série Vertex S+ compacte et haute puissance, technologie multi-busbar — parfaite pour maximiser la production sur toiture limitée.",
     powerRange: "500 – 700 Wc",
-    image: `${PANELS}/trina-vertex-panel.svg`,
+    installImage: `${INSTALL}/trina-essaouira-install.jpg`,
+    installImageAlt:
+      "Panneaux Trina Vertex S+ sur villa avec piscine — Essaouira",
+    image: `${PRODUCTS}/trina-vertex-product.jpg`,
     logo: `${PANELS}/logo-trina.svg`,
-    accent: "#E60012",
-    accentLight: "#FDE8EA",
-    bgGradient: "linear-gradient(145deg, #1a1a2e 0%, #2d2d44 40%, #0f0f1a 100%)",
+    accent: "#008CD6",
+    accentSecondary: "#E60012",
+    accentLight: "#E6F7FD",
+    bgGradient: "linear-gradient(145deg, #003d5c 0%, #006699 45%, #002840 100%)",
   },
   {
     id: "canadian",
@@ -71,10 +88,14 @@ export const solairePhotovoltaiqueMarques: SolairePvMarque[] = [
     description:
       "Panneaux TOPCon all-black disponibles, garantie produit 15 ans et production 30 ans — esthétique soignée pour villas premium.",
     powerRange: "500 – 665 Wc",
-    image: `${PANELS}/canadian-solar-panel.svg`,
+    installImage: `${INSTALL}/canadian-essaouira-install.jpg`,
+    installImageAlt:
+      "Modules Canadian Solar all-black sur riad — Essaouira",
+    image: `${PRODUCTS}/canadian-solar-product.jpg`,
     logo: `${PANELS}/logo-canadian-solar.svg`,
-    accent: "#C8102E",
-    accentLight: "#FCE8EC",
+    accent: "#003DA5",
+    accentSecondary: "#C8102E",
+    accentLight: "#E8EEF8",
     bgGradient: "linear-gradient(145deg, #002B5C 0%, #003D7A 45%, #001A3D 100%)",
   },
 ];

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { catalog, brandSlug } from "@/content/catalog";
+import { SITEMAP_SERVICE_ROUTES } from "@/content/navigation";
 
 /** Core Essaouira service pages — highest SEO priority. */
 const ESSAOUIRA_SERVICES = [
@@ -16,7 +17,9 @@ const STATIC_ROUTES = [
   "/",
   ...ESSAOUIRA_SERVICES,
   "/energie-solaire/marques-solaire-thermique",
-  "/services/traitement-eau",
+  "/energie-solaire/marques-photovoltaiques",
+  "/energie-solaire/marques-variateur-solaire",
+  ...SITEMAP_SERVICE_ROUTES,
   "/realisations",
   "/a-propos",
   "/contact",
@@ -53,10 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map((c) => `/energie-solaire/${c.id}`);
 
   const allPaths = [
-    ...STATIC_ROUTES,
-    ...brandRoutes,
-    ...climGammeRoutes,
-    ...solaireGammeRoutes,
+    ...new Set([
+      ...STATIC_ROUTES,
+      ...brandRoutes,
+      ...climGammeRoutes,
+      ...solaireGammeRoutes,
+    ]),
   ];
 
   return allPaths.map((path) => ({

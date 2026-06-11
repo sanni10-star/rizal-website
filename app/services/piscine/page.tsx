@@ -3,7 +3,11 @@ import Link from "next/link";
 import { Check, Clock3, ShieldCheck, Waves } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { PiscinePompesRubrique } from "@/components/piscine/PiscinePompesRubrique";
+import { PiscinePompesCarouselRubriqueClient } from "@/components/piscine/PiscinePompesCarouselRubriqueClient";
+import { PiscineFiltresCarouselRubriqueClient } from "@/components/piscine/PiscineFiltresCarouselRubriqueClient";
+import { PiscinePacCarouselRubriqueClient } from "@/components/piscine/PiscinePacCarouselRubriqueClient";
+import { PiscineTraitementCarouselRubriqueClient } from "@/components/piscine/PiscineTraitementCarouselRubriqueClient";
+import { PiscineCouvertureCarouselRubriqueClient } from "@/components/piscine/PiscineCouvertureCarouselRubriqueClient";
 import { AddToCartButton } from "@/components/catalog/AddToCartButton";
 import { catalog, getByCategory } from "@/content/catalog";
 import { whatsappContactUrl, whatsappLinkForItem } from "@/lib/whatsapp";
@@ -12,7 +16,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Piscine Essaouira — Construction & Équipements",
   description:
-    "Construction de piscine à Essaouira : skimmer, débordement, couloir de nage. Pompes Astralpool & Waterpool, garantie décennale. Devis gratuit RIZAL.",
+    "Construction de piscine à Essaouira : skimmer, débordement, couloir de nage. Pompes, filtres à sable et pompes à chaleur Laswim 9-40 kW. Garantie décennale. Devis gratuit RIZAL.",
   path: "/services/piscine",
   keywords: [
     "piscine Essaouira",
@@ -26,10 +30,15 @@ const piscineConstruction = getByCategory("piscine").filter(
   (i) =>
     !i.id.startsWith("pompe-") &&
     !i.id.startsWith("astralpool-") &&
-    !i.id.startsWith("waterpool-"),
+    !i.id.startsWith("waterpool-") &&
+    !i.id.startsWith("dab-") &&
+    !i.id.startsWith("filtre-") &&
+    !i.id.startsWith("pac-") &&
+    !i.id.startsWith("traitement-") &&
+    !i.id.startsWith("couverture-"),
 );
 
-const accessoires = ["electrolyseur-sel", "pac-piscine", "eclairage-led-rgb"]
+const accessoires = ["electrolyseur-sel", "eclairage-led-rgb"]
   .map((id) => catalog.find((c) => c.id === id))
   .filter((x): x is NonNullable<typeof x> => Boolean(x));
 
@@ -78,8 +87,9 @@ export default function PiscinePage() {
           </h1>
           <p className="mt-5 max-w-2xl text-base text-bone/80 md:text-lg">
             De la première étude à la première baignade, RIZAL construit votre
-            piscine à Essaouira : gros œuvre, équipements, pompes de marque et
-            accessoires. Délais 8 à 16 semaines, garantie décennale.
+            piscine à Essaouira : gros œuvre, équipements, pompes et filtres à
+            sable de marque et accessoires. Délais 8 à 16 semaines, garantie
+            décennale.
           </p>
 
           <div className="mt-8 inline-flex flex-wrap gap-3">
@@ -108,8 +118,8 @@ export default function PiscinePage() {
               décennale
             </div>
             <div className="inline-flex items-center gap-2 text-sm text-bone/80">
-              <Waves className="h-4 w-4 text-sand-400" /> Astralpool &
-              Waterpool
+              <Waves className="h-4 w-4 text-sand-400" /> Astralpool, Waterpool &
+              Aquarius
             </div>
           </div>
         </Container>
@@ -119,11 +129,59 @@ export default function PiscinePage() {
       <section className="bg-bone py-16 md:py-20">
         <Container>
           <SectionTitle
-            eyebrow="Équipements Piscine"
+            eyebrow="Pompes à piscine"
             title="Pompes & filtration pour piscine à Essaouira"
-            description="Pompes, filtres et accessoires Astralpool et Waterpool disponibles à Essaouira pour votre bassin."
+            description="Astralpool Victoria Plus, DAB Euroswim et Waterpool Orion — monophasé et triphasé, de 3/4 à 3 CV."
           />
-          <PiscinePompesRubrique />
+          <PiscinePompesCarouselRubriqueClient />
+        </Container>
+      </section>
+
+      {/* ─── FILTRES — Filtres à sable (Brand Rubriques) ─── */}
+      <section className="bg-white py-16 md:py-20">
+        <Container>
+          <SectionTitle
+            eyebrow="Filtres à sable"
+            title="Filtres à sable pour piscine à Essaouira"
+            description="Astralpool Aster, Waterpool et Aquarius — vanne 6 voies, manomètre, dimensionnement adapté à votre bassin."
+          />
+          <PiscineFiltresCarouselRubriqueClient />
+        </Container>
+      </section>
+
+      {/* ─── PAC — Pompes à chaleur Laswim ─── */}
+      <section className="bg-bone py-16 md:py-20">
+        <Container>
+          <SectionTitle
+            eyebrow="Pompes à chaleur"
+            title="Chauffage piscine Laswim — 9 à 40 kW"
+            description="Laswim FIQ Inverter et V-Type — full inverter, COP jusqu'à 15, Wi-Fi, échangeur titane. Prolongez la saison de baignade."
+          />
+          <PiscinePacCarouselRubriqueClient />
+        </Container>
+      </section>
+
+      {/* ─── TRAITEMENT — Produits chimiques piscine ─── */}
+      <section className="bg-white py-16 md:py-20">
+        <Container>
+          <SectionTitle
+            eyebrow="Traitement piscine"
+            title="Chlore, pH− & entretien de l'eau à Essaouira"
+            description="Chlore poudre Astralpool & RIZAL, pastilles, chlore choc, anti-algue, floculant, anti-calcaire et pH−."
+          />
+          <PiscineTraitementCarouselRubriqueClient />
+        </Container>
+      </section>
+
+      {/* ─── COUVERTURE — Bâche à bulles thermique ─── */}
+      <section className="bg-bone py-16 md:py-20">
+        <Container>
+          <SectionTitle
+            eyebrow="Couverture thermique"
+            title="Bâche à bulles sur mesure pour votre piscine à Essaouira"
+            description="Bâches 400 microns brut de coupe, bordée 2 ou 4 côtés QUATRO, et GeoBubble 400 & 500 µ — limitez l'évaporation et conservez la chaleur."
+          />
+          <PiscineCouvertureCarouselRubriqueClient />
         </Container>
       </section>
 

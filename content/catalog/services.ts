@@ -292,16 +292,54 @@ export const servicesItems: CatalogItem[] = [
     crossSell: ["pompe-astralpool-victoria-plus", "pompe-astralpool-glass-plus", "pompe-astralpool-sena"],
   },
   {
+    id: "pompe-dab-euroswim",
+    category: "piscine",
+    name: "Pompe DAB Euroswim",
+    gammeLabel: "Pompe filtration piscine — 0,5 à 3 CV",
+    shortDescFr:
+      "Pompe piscine DAB Euroswim — auto-amorçante, silencieuse, préfiltre grande capacité, mono et triphasé.",
+    longDescFr:
+      "La DAB Euroswim est une pompe centrifuge auto-amorçante à haut rendement pour filtration de piscines résidentielles. Panier préfiltre transparent, silent-blocs, compatible chlore, sel et eau de mer. Débit jusqu'à 42 m³/h, aspiration 2 m. De 0,5 à 3 CV en 220 V mono et 380 V tri.",
+    image: "/img/piscine/pompes/products/dab-euroswim-product.jpg",
+    gallery: ["/img/piscine/pompes/install/dab-install-villa.jpg"],
+    capacities: ["0.5 CV", "0.75 CV", "1 CV", "1.5 CV", "2 CV", "3 CV"],
+    specs: [
+      { label: "Catégorie", value: "Pompe piscine" },
+      { label: "Marque", value: "DAB" },
+      { label: "Modèle", value: "Euroswim" },
+      { label: "Type", value: "Auto-amorçante centrifuge" },
+      { label: "Puissance", value: "0,5 à 3 CV" },
+      { label: "Phase", value: "Monophasé / Triphasé" },
+      { label: "Débit max", value: "42 m³/h" },
+      { label: "Eau de mer", value: "Compatible" },
+    ],
+    highlights: ["Silencieuse", "Haut rendement", "Eau de mer"],
+    crossSell: ["pompe-astralpool-victoria-plus", "pompe-waterpool-orion", "waterpool-filtre-sable"],
+  },
+  {
     id: "pompe-waterpool-orion",
     category: "piscine",
     name: "Pompe Waterpool Orion",
-    gammeLabel: "Pompe auto-amorçante robuste — 0.5 à 3 CV",
+    gammeLabel: "Pompe auto-amorçante robuste — 3/4 à 3 CV",
     shortDescFr: "Pompe piscine Waterpool Orion — robuste, auto-amorçante, excellent rapport qualité-prix, mono et triphasé.",
     longDescFr:
-      "La Waterpool Orion est une pompe auto-amorçante robuste pour piscines résidentielles. Disponible de 0.5 à 3 CV en versions 220V (monophasé) et 380V (triphasé). Pré-filtre avec couvercle transparent, construction durable, idéale pour les piscines au Maroc. Excellent rapport qualité-prix.",
-    image: "/img/products/piscine/pompes/waterpool/orion.jpg",
-    gallery: ["/img/products/piscine/pompes/waterpool/orion-installed.jpg"],
-    capacities: ["0.5 CV", "0.75 CV", "1 CV", "1.5 CV", "2 CV", "3 CV"],
+      "La Waterpool Orion est une pompe auto-amorçante robuste pour piscines résidentielles. Moteur résiné, arbre inox AISI 316L, préfiltre transparent. Disponible de 3/4 à 3 CV en 220 V (monophasé) et 380 V (triphasé). Références catalogue 04PS0231 à 04PS0242. Idéale pour les piscines au Maroc.",
+    image: "/img/piscine/pompes/products/waterpool-orion-product.jpg",
+    gallery: ["/img/piscine/pompes/install/waterpool-install-villa.jpg"],
+    capacities: [
+      "0.5 CV 220V (04PS0231)",
+      "0.5 CV 380V (04PS0232)",
+      "0.75 CV 220V (04PS0241)",
+      "0.75 CV 380V (04PS0242)",
+      "1 CV 220V (04PS0233)",
+      "1 CV 380V (04PS0234)",
+      "1.5 CV 220V (04PS0236)",
+      "1.5 CV 380V (04PS0235)",
+      "2 CV 220V (04PS0237)",
+      "2 CV 380V (04PS0238)",
+      "3 CV 220V (04PS0239)",
+      "3 CV 380V (04PS0240)",
+    ],
     specs: [
       { label: "Catégorie", value: "Pompe piscine" },
       { label: "Marque", value: "Waterpool" },
@@ -340,6 +378,358 @@ export const servicesItems: CatalogItem[] = [
     crossSell: ["pompe-waterpool-orion", "waterpool-filtre-sable", "piscine-debordement"],
   },
   {
+    id: "filtre-astralpool-aster",
+    category: "piscine",
+    name: "Astralpool Aster — Filtre à Sable",
+    gammeLabel: "Filtre laminé polyester — Vanne 6 voies — Ø350 à Ø900",
+    shortDescFr:
+      "Filtre à sable Astralpool Aster — cuve laminée polyester/fibre de verre, vanne multivoie 6 positions, manomètre intégré.",
+    longDescFr:
+      "Le filtre à sable Astralpool Aster est la référence pour la filtration piscine résidentielle et semi-commerciale. Cuve laminée polyester ou fibre de verre, vanne multivoie 6 positions (filtration, lavage, rinçage, circulation, vidange, fermé), manomètre de pression intégré. Disponible de Ø350 à Ø900 mm, débit 5 à 30 m³/h.",
+    image: "/img/piscine/filtres/products/astralpool-aster-product.jpg",
+    capacities: ["Ø450 (5-8 m³/h)", "Ø600 (10-14 m³/h)", "Ø750 (21-25 m³/h)", "Ø900 (26-30 m³/h)"],
+    specs: [
+      { label: "Catégorie", value: "Filtration piscine" },
+      { label: "Marque", value: "Astralpool" },
+      { label: "Série", value: "Aster" },
+      { label: "Type", value: "Filtre à sable" },
+      { label: "Cuve", value: "Laminé polyester / fibre de verre" },
+      { label: "Vanne", value: "Multivoie 6 positions" },
+      { label: "Média filtrant", value: "Sable ou verre" },
+    ],
+    highlights: ["Laminé polyester", "6 positions", "5 à 30 m³/h"],
+    crossSell: ["pompe-astralpool-victoria-plus", "waterpool-filtre-sable", "piscine-debordement"],
+  },
+  {
+    id: "filtre-aquarius-side",
+    category: "piscine",
+    name: "Aquarius — Filtre à Sable",
+    gammeLabel: "Filtre polypropylène — Vanne latérale 6 voies — 6 à 35 m³/h",
+    shortDescFr:
+      "Filtre à sable Aquarius — cuve injectée polypropylène, vanne latérale 6 voies, connexions union, débit 6 à 35 m³/h.",
+    longDescFr:
+      "Le filtre à sable Aquarius offre une filtration fiable pour piscines résidentielles et semi-professionnelles. Cuve injectée en polypropylène, vanne latérale 6 positions, manomètre intégré, connexions union 1½\". Débits de 6 à 35 m³/h selon le modèle.",
+    image: "/img/piscine/filtres/products/aquarius-filtre-product.jpg",
+    capacities: ["6 m³/h", "10 m³/h", "14 m³/h", "22 m³/h", "35 m³/h"],
+    specs: [
+      { label: "Catégorie", value: "Filtration piscine" },
+      { label: "Marque", value: "Aquarius" },
+      { label: "Type", value: "Filtre à sable" },
+      { label: "Cuve", value: "Polypropylène injecté" },
+      { label: "Vanne", value: "Latérale 6 positions" },
+      { label: "Débit", value: "6 à 35 m³/h" },
+      { label: "Média filtrant", value: "Sable ou verre" },
+    ],
+    highlights: ["Polypropylène", "Vanne latérale", "6 à 35 m³/h"],
+    crossSell: ["pompe-waterpool-orion", "waterpool-filtre-sable", "piscine-debordement"],
+  },
+  {
+    id: "pac-laswim-fiq",
+    category: "piscine",
+    name: "Laswim FIQ Inverter — Pompe à Chaleur",
+    gammeLabel: "PAC piscine full inverter — 9 à 24 kW — Wi-Fi R32",
+    shortDescFr:
+      "Pompe à chaleur piscine Laswim FIQ Inverter — full DC inverter, COP jusqu'à 15, ultra-silencieuse, échangeur titane, pilotage Wi-Fi.",
+    longDescFr:
+      "La pompe à chaleur Laswim série FIQ est conçue pour un chauffage piscine silencieux et économe. Compresseur DC twin-rotary Mitsubishi, réfrigérant R32, échangeur titane torsadé, fonction Wi-Fi intégrée. Modèles LAS07 à LAS24, de 9 à 24 kW, pour piscines de 15 à 110 m³. Fonctionne en chauffage et refroidissement, d'avril à octobre au Maroc.",
+    image: "/img/piscine/pac/products/laswim-fiq-product.jpg",
+    capacities: ["9 kW (LAS09)", "13 kW (LAS13)", "16 kW (LAS16)", "20 kW (LAS20)", "24 kW (LAS24)"],
+    specs: [
+      { label: "Catégorie", value: "Chauffage piscine" },
+      { label: "Marque", value: "Laswim" },
+      { label: "Série", value: "FIQ Inverter" },
+      { label: "Puissance", value: "9 à 24 kW" },
+      { label: "COP max", value: "Jusqu'à 15" },
+      { label: "Réfrigérant", value: "R32" },
+      { label: "Alimentation", value: "220-240 V mono" },
+    ],
+    highlights: ["Full Inverter", "Wi-Fi", "COP 15"],
+    crossSell: ["pompe-waterpool-orion", "waterpool-filtre-sable", "electrolyseur-sel"],
+  },
+  {
+    id: "pac-laswim-vtype",
+    category: "piscine",
+    name: "Laswim V-Type — Pompe à Chaleur",
+    gammeLabel: "PAC piscine commercial — 30 à 40 kW — Triphasé",
+    shortDescFr:
+      "Pompe à chaleur Laswim V-Type — évaporateur en V, basse température, triphasé 380 V, pour grands bassins et hôtels.",
+    longDescFr:
+      "La pompe à chaleur Laswim V-Type est conçue pour les applications commerciales et les grands bassins. Évaporateur en V haute performance, fonctionnement jusqu'à -10 °C, échangeur titane/PVC, triphasé 380 V. Modèles LAS35 à LAS42, puissance de chauffage 30 à 40 kW pour volumes jusqu'à 540 m³.",
+    image: "/img/piscine/pac/products/laswim-vtype-product.jpg",
+    capacities: ["30 kW (LAS35)", "40 kW (LAS42)"],
+    specs: [
+      { label: "Catégorie", value: "Chauffage piscine" },
+      { label: "Marque", value: "Laswim" },
+      { label: "Série", value: "V-Type Commercial" },
+      { label: "Puissance", value: "30 à 40 kW" },
+      { label: "Alimentation", value: "380 V triphasé" },
+      { label: "Temp. min", value: "-10 °C" },
+      { label: "Volume bassin", value: "Jusqu'à 540 m³" },
+    ],
+    highlights: ["Commercial", "Basse temp.", "40 kW"],
+    crossSell: ["filtre-astralpool-aster", "pompe-astralpool-victoria-plus", "piscine-debordement"],
+  },
+  {
+    id: "traitement-chlore-poudre-astral",
+    category: "piscine",
+    name: "Chlore poudre — Astralpool",
+    gammeLabel: "Trichlor 90% — 5 kg — Dissolution lente",
+    shortDescFr:
+      "Chlore en poudre Astralpool — trichlor stabilisé 90% chlore actif, dissolution lente pour désinfection continue.",
+    longDescFr:
+      "Le chlore en poudre Astralpool est un trichlor stabilisé à 90% de chlore actif, à dissolution lente pour un traitement continu. Dosage recommandé : 3 à 4 g/m³/jour dans le skimmer. Compatible tous revêtements de piscine.",
+    image: "/img/piscine/traitement/products/chlore-poudre-astral.jpg",
+    specs: [
+      { label: "Catégorie", value: "Traitement piscine" },
+      { label: "Marque", value: "Astralpool" },
+      { label: "Format", value: "Poudre 5 kg" },
+      { label: "Chlore actif", value: "90%" },
+      { label: "Dosage", value: "3 – 4 g/m³/jour" },
+    ],
+    highlights: ["Trichlor 90%", "Dissolution lente", "5 kg"],
+    crossSell: ["traitement-ph-moins", "traitement-floculant", "filtre-astralpool-aster"],
+  },
+  {
+    id: "traitement-chlore-poudre-rizal",
+    category: "piscine",
+    name: "Chlore poudre — RIZAL",
+    gammeLabel: "Qualité pro — 5 kg — Entretien quotidien",
+    shortDescFr:
+      "Chlore en poudre RIZAL — désinfection quotidienne pour piscines résidentielles, excellent rapport qualité-prix au Maroc.",
+    longDescFr:
+      "Le chlore en poudre RIZAL assure une désinfection quotidienne efficace pour piscines résidentielles. Dosage simple, compatible tous revêtements. Solution économique pour l'entretien de l'eau à Essaouira.",
+    image: "/img/piscine/traitement/products/chlore-poudre-rizal.jpg",
+    specs: [
+      { label: "Catégorie", value: "Traitement piscine" },
+      { label: "Marque", value: "RIZAL" },
+      { label: "Format", value: "Poudre 5 kg" },
+      { label: "Usage", value: "Entretien quotidien" },
+      { label: "pH cible", value: "7,2 – 7,6" },
+    ],
+    highlights: ["RIZAL", "5 kg", "Quotidien"],
+    crossSell: ["traitement-chlore-choc", "traitement-ph-moins", "pompe-waterpool-orion"],
+  },
+  {
+    id: "traitement-chlore-pastille",
+    category: "piscine",
+    name: "Chlore pastille — Astralpool",
+    gammeLabel: "Galets 200 g — 5 kg — Skimmer ou doseur",
+    shortDescFr:
+      "Chlore en galets Astralpool — pastilles 200 g à dissolution lente, 90% chlore utile, pour skimmer ou doseur flottant.",
+    longDescFr:
+      "Les galets de chlore Astralpool (200 g) se dissolvent lentement pour maintenir un taux de chlore stable. À placer dans le skimmer ou un doseur flottant. 90% de chlore actif.",
+    image: "/img/piscine/traitement/products/chlore-pastille.jpg",
+    specs: [
+      { label: "Catégorie", value: "Traitement piscine" },
+      { label: "Marque", value: "Astralpool" },
+      { label: "Format", value: "Galets 200 g" },
+      { label: "Chlore actif", value: "90%" },
+      { label: "Application", value: "Skimmer / doseur" },
+    ],
+    highlights: ["Galets 200 g", "Dissolution lente", "Skimmer"],
+    crossSell: ["traitement-chlore-poudre-astral", "traitement-ph-moins", "electrolyseur-sel"],
+  },
+  {
+    id: "traitement-chlore-choc",
+    category: "piscine",
+    name: "Chlore choc — Granulé V60",
+    gammeLabel: "Dissolution rapide — 5 kg — Traitement choc",
+    shortDescFr:
+      "Chlore choc granulé V60 — dissolution rapide pour remonter le taux de chlore, éliminer algues et eau trouble.",
+    longDescFr:
+      "Le chlore choc granulé V60 dissout rapidement pour un traitement de choc efficace. Dosage : 150 g/10 m³. Idéal pour eau verte, trouble ou après forte baignade.",
+    image: "/img/piscine/traitement/products/chlore-choc.jpg",
+    specs: [
+      { label: "Catégorie", value: "Traitement piscine" },
+      { label: "Type", value: "Granulé rapide" },
+      { label: "Format", value: "5 kg" },
+      { label: "Choc", value: "150 g / 10 m³" },
+      { label: "Usage", value: "Eau trouble / algues" },
+    ],
+    highlights: ["Choc rapide", "V60", "5 kg"],
+    crossSell: ["traitement-anti-algue", "traitement-floculant", "traitement-ph-moins"],
+  },
+  {
+    id: "traitement-anti-algue",
+    category: "piscine",
+    name: "Anti-algue — Astralpool",
+    gammeLabel: "Algicide — 5 L — Double action",
+    shortDescFr:
+      "Anti-algues Astralpool — prévention et élimination des algues, action floculante intégrée.",
+    longDescFr:
+      "L'anti-algues Astralpool prévient et élimine les algues tout en floculant l'eau. Dosage initial : 1 L/100 m³. Liquide non moussant, compatible tous traitements.",
+    image: "/img/piscine/traitement/products/anti-algue.jpg",
+    specs: [
+      { label: "Catégorie", value: "Traitement piscine" },
+      { label: "Marque", value: "Astralpool" },
+      { label: "Format", value: "Liquide 5 L" },
+      { label: "Dosage", value: "1 L / 100 m³" },
+      { label: "Action", value: "Algicide + floculant" },
+    ],
+    highlights: ["Algicide", "5 L", "Floculant"],
+    crossSell: ["traitement-chlore-choc", "traitement-floculant", "filtre-astralpool-aster"],
+  },
+  {
+    id: "traitement-floculant",
+    category: "piscine",
+    name: "Floculant — Liquide",
+    gammeLabel: "Clarification — 5 L — Eau cristalline",
+    shortDescFr:
+      "Floculant liquide — élimine les particules responsables de l'eau trouble pour une eau cristalline.",
+    longDescFr:
+      "Le floculant liquide agglomère les micro-particules en suspension. Dosage récupération : 10 ml/m³ ; entretien : 0,5 ml/m³. Compatible filtre à sable.",
+    image: "/img/piscine/traitement/products/floculant.jpg",
+    specs: [
+      { label: "Catégorie", value: "Traitement piscine" },
+      { label: "Type", value: "Floculant liquide" },
+      { label: "Format", value: "5 L" },
+      { label: "Récupération", value: "10 ml / m³" },
+      { label: "Entretien", value: "0,5 ml / m³" },
+    ],
+    highlights: ["Liquide 5 L", "Clarification", "Filtre sable"],
+    crossSell: ["traitement-chlore-choc", "traitement-anti-algue", "waterpool-filtre-sable"],
+  },
+  {
+    id: "traitement-anti-calcaire",
+    category: "piscine",
+    name: "Anti-calcaire — Ocedis",
+    gammeLabel: "Séquestrant — 5 L — Prévention dépôts",
+    shortDescFr:
+      "Anti-calcaire liquide Ocedis — prévient les dépôts calcaires sur liner et équipements, idéal pour l'eau dure d'Essaouira.",
+    longDescFr:
+      "L'anticalcaire liquide Ocedis (Calfix) séquestre les minéraux dissous et prévient l'incrustation calcaire. Dosage : 1 L/20 m³ à la mise en eau et en entretien.",
+    image: "/img/piscine/traitement/products/anti-calcaire.jpg",
+    specs: [
+      { label: "Catégorie", value: "Traitement piscine" },
+      { label: "Marque", value: "Ocedis" },
+      { label: "Format", value: "Liquide 5 L" },
+      { label: "Usage", value: "Prévention dépôts" },
+      { label: "Eau", value: "Dure / Essaouira" },
+    ],
+    highlights: ["Anti-calcaire", "5 L", "Eau dure"],
+    crossSell: ["traitement-ph-moins", "traitement-floculant", "piscine-liner-arme"],
+  },
+  {
+    id: "traitement-ph-moins",
+    category: "piscine",
+    name: "pH− — Poudre",
+    gammeLabel: "Correcteur pH — 5 kg — 7,2 à 7,6",
+    shortDescFr:
+      "pH Minus poudre — abaisse le pH de l'eau de piscine entre 7,2 et 7,6. Compatible tous traitements.",
+    longDescFr:
+      "Le pH Minus en poudre abaisse le pH de l'eau de piscine. Dosage : 150 g/10 m³ pour baisser de 0,2 unité. Indispensable avant tout traitement choc ou chloration.",
+    image: "/img/piscine/traitement/products/ph-moins.jpg",
+    specs: [
+      { label: "Catégorie", value: "Traitement piscine" },
+      { label: "Type", value: "Réducteur de pH" },
+      { label: "Format", value: "Poudre 5 kg" },
+      { label: "Dosage", value: "150 g / 10 m³" },
+      { label: "pH cible", value: "7,2 – 7,6" },
+    ],
+    highlights: ["pH−", "5 kg", "Équilibre"],
+    crossSell: ["traitement-chlore-poudre-astral", "traitement-chlore-choc", "electrolyseur-sel"],
+  },
+  {
+    id: "couverture-non-bordee",
+    category: "piscine",
+    name: "Bâche à bulles — Non bordée",
+    gammeLabel: "400 microns — Brut de coupe — Sur mesure",
+    shortDescFr:
+      "Bâche isotherme 400 microns non bordée — découpée aux dimensions du bassin, limite l'évaporation et conserve la chaleur. Solution économique.",
+    longDescFr:
+      "La bâche à bulles 400 microns non bordée (brut de coupe) flotte à la surface de la piscine, bulles vers le bas. Sans œillets ni renforts périphériques — idéale sans enrouleur. Coloris bleu/bleu, traitement anti-UV, fabrication sur mesure.",
+    image: "/img/piscine/couverture/products/non-bordee.jpg",
+    specs: [
+      { label: "Catégorie", value: "Couverture thermique" },
+      { label: "Épaisseur", value: "400 microns" },
+      { label: "Finition", value: "Brut de coupe" },
+      { label: "Coloris", value: "Bleu / Bleu" },
+      { label: "Enrouleur", value: "Non compatible" },
+    ],
+    highlights: ["400 µ", "Économique", "Sur mesure"],
+    crossSell: ["couverture-bordee-4", "pac-laswim-fiq-inverter", "traitement-chlore-poudre-astral"],
+  },
+  {
+    id: "couverture-bordee-2",
+    category: "piscine",
+    name: "Bâche à bulles — Bordée 2 côtés",
+    gammeLabel: "400 microns — DUO — Œillets enrouleur",
+    shortDescFr:
+      "Couverture 400 microns bordée sur 2 largeurs — renfort cousu, œillets tous les 50 cm. Compatible enrouleur, bâchette et sandows inclus.",
+    longDescFr:
+      "La bâche à bulles 400 microns bordée 2 côtés (DUO) dispose d'un renfort polyéthylène cousu sur deux largeurs avec œillets aux angles et tous les 50 cm côté enrouleur. Gain de température +3 à +7 °C, évaporation réduite d'environ 90 %.",
+    image: "/img/piscine/couverture/products/bordee-2.jpg",
+    specs: [
+      { label: "Catégorie", value: "Couverture thermique" },
+      { label: "Épaisseur", value: "400 microns" },
+      { label: "Finition", value: "Bordée 2 côtés" },
+      { label: "Œillets", value: "Tous les 50 cm" },
+      { label: "Gain thermique", value: "+3 à +7 °C" },
+    ],
+    highlights: ["DUO", "Enrouleur", "Anti-UV"],
+    crossSell: ["couverture-bordee-4", "pac-laswim-fiq-inverter", "piscine-skimmer-classique"],
+  },
+  {
+    id: "couverture-bordee-4",
+    category: "piscine",
+    name: "Bâche à bulles — Bordée 4 côtés",
+    gammeLabel: "400 microns — QUATRO — Périmètre renforcé",
+    shortDescFr:
+      "Bâche QUATRO bordée sur tout le périmètre — durabilité maximale, œillets enrouleur, fabrication française sur mesure.",
+    longDescFr:
+      "La bâche à bulles 400 microns bordée 4 côtés (QUATRO) renforce tout le périmètre par un ourlet cousu en polyéthylène. Œillets aux angles et côté enrouleur, bâchette de protection et sandows fournis. Idéale pour piscines rectangulaires avec enrouleur.",
+    image: "/img/piscine/couverture/products/bordee-4.jpg",
+    specs: [
+      { label: "Catégorie", value: "Couverture thermique" },
+      { label: "Épaisseur", value: "400 microns" },
+      { label: "Finition", value: "Bordée 4 côtés" },
+      { label: "Évaporation", value: "Réduite ~90 %" },
+      { label: "Fabrication", value: "Sur mesure France" },
+    ],
+    highlights: ["QUATRO", "4 côtés", "Premium"],
+    crossSell: ["couverture-geobubble-500", "pac-laswim-v-type", "traitement-anti-calcaire"],
+  },
+  {
+    id: "couverture-geobubble-400",
+    category: "piscine",
+    name: "GeoBubble — 400 microns",
+    gammeLabel: "Bulles brevetées — Sur mesure — Anti-UV",
+    shortDescFr:
+      "Couverture GeoBubble 400 µ — technologie brevetée Plastipack, durée de vie +25 %, résistance UV et chimique accrue.",
+    longDescFr:
+      "GeoBubble 400 microns utilise des bulles en forme de huit interconnectées — 50 % plus épaisses aux points fins, sans zone fragile. Réduit l'évaporation de 98 %, limite les produits chimiques et prolonge la saison de baignade.",
+    image: "/img/piscine/couverture/products/geobubble-400.jpg",
+    specs: [
+      { label: "Catégorie", value: "Couverture thermique" },
+      { label: "Épaisseur", value: "400 microns" },
+      { label: "Technologie", value: "GeoBubble breveté" },
+      { label: "Durée de vie", value: "+25 % vs classique" },
+      { label: "Évaporation", value: "Réduite 98 %" },
+    ],
+    highlights: ["GeoBubble", "Breveté", "400 µ"],
+    crossSell: ["couverture-geobubble-500", "pac-laswim-fiq-inverter", "couverture-bordee-4"],
+  },
+  {
+    id: "couverture-geobubble-500",
+    category: "piscine",
+    name: "GeoBubble — 500 microns",
+    gammeLabel: "Premium — Haute résistance — PAC",
+    shortDescFr:
+      "GeoBubble 500 µ premium — épaisseur renforcée pour piscines chauffées ou à fort usage, isolation thermique optimale.",
+    longDescFr:
+      "GeoBubble 500 microns offre une résistance supérieure à l'usure et aux UV pour piscines intensives ou équipées d'une PAC. Même technologie brevetée à bulles interconnectées, poids ~460 g/m², idéal pour conserver la chaleur captée par Laswim.",
+    image: "/img/piscine/couverture/products/geobubble-500.jpg",
+    specs: [
+      { label: "Catégorie", value: "Couverture thermique" },
+      { label: "Épaisseur", value: "500 microns" },
+      { label: "Technologie", value: "GeoBubble breveté" },
+      { label: "Usage", value: "PAC / fort usage" },
+      { label: "Poids", value: "~460 g/m²" },
+    ],
+    highlights: ["500 µ", "Premium", "PAC"],
+    crossSell: ["couverture-geobubble-400", "pac-laswim-fiq-inverter", "traitement-ph-moins"],
+  },
+  {
     id: "waterpool-filtre-sable",
     category: "piscine",
     name: "Waterpool Filtre à Sable",
@@ -347,7 +737,7 @@ export const servicesItems: CatalogItem[] = [
     shortDescFr: "Filtre à sable Waterpool — vanne multivoie 6 positions, manomètre, pour piscines de 20 à 80 m³.",
     longDescFr:
       "Le filtre à sable Waterpool assure une filtration efficace de votre piscine. Cuve en polyéthylène haute densité résistant aux UV, vanne multivoie 6 positions (filtration, lavage, rinçage, circulation, vidange, fermé), manomètre de pression intégré. Disponible en diamètres 400, 500, 600 et 700 mm pour piscines de 20 à 80 m³.",
-    image: "/img/products/piscine/pompes/waterpool/filtre-sable.jpg",
+    image: "/img/piscine/filtres/products/waterpool-filtre-product.jpg",
     capacities: ["Ø400 (20-35 m³)", "Ø500 (35-50 m³)", "Ø600 (50-65 m³)", "Ø700 (65-80 m³)"],
     specs: [
       { label: "Catégorie", value: "Filtration piscine" },
@@ -537,5 +927,334 @@ export const servicesItems: CatalogItem[] = [
     ],
     highlights: ["Sans chimie", "99,99 % efficace", "Compact"],
     crossSell: ["osmoseur-domestique-6etages", "adoucisseur-villa"],
+  },
+
+  // ========== AUTOMATISATION EAU & PORTAIL ==========
+  {
+    id: "auto-euromatic-techno",
+    category: "automatisation",
+    name: "Eauromatic Techno — Portail battant",
+    gammeLabel: "Vérin électromécanique — jusqu'à 4 m / vantail",
+    shortDescFr:
+      "Automatisme Eauromatic Techno pour portails battants — vérins aluminium, anti-écrasement, 230V ou 24V. Made in Italy.",
+    longDescFr:
+      "Le vérin Eauromatic Techno motorise les portails battants jusqu'à 4 m par vantail. Structure aluminium, tube inox, carte de gestion avec détection d'obstacles et apprentissage simplifié. Idéal pour villas et résidences à Essaouira.",
+    image: "/img/categories/automatisation/euromatic-techno-card.jpg",
+    specs: [
+      { label: "Marque", value: "Eauromatic" },
+      { label: "Type", value: "Portail battant" },
+      { label: "Poussée", value: "2 800 N" },
+      { label: "Alimentation", value: "230V / 24V" },
+      { label: "Protection", value: "IP44" },
+    ],
+    highlights: ["Battant", "Anti-écrasement", "Made in Italy"],
+    crossSell: ["auto-key-coulissant", "adoucisseur-villa", "piscine-skimmer-classique"],
+  },
+  {
+    id: "auto-key-coulissant",
+    category: "automatisation",
+    name: "Key Automation — Portail coulissant",
+    gammeLabel: "Moteur 230V — Crémaillère — Usage intensif",
+    shortDescFr:
+      "Motorisation Key pour portail coulissant — moteur 230V, centrale de commande, photocellules et télécommande. Installation RIZAL.",
+    longDescFr:
+      "Le kit Key Automation pour portail coulissant assure une ouverture fluide et sécurisée. Moteur 230V avec crémaillère, centrale CT-201 compatible radio, anti-écrasement et ralentissements en ouverture/fermeture.",
+    image: "/img/categories/automatisation/key-coulissant-card.jpg",
+    specs: [
+      { label: "Marque", value: "Key Automation" },
+      { label: "Type", value: "Portail coulissant" },
+      { label: "Tension", value: "230V" },
+      { label: "Sécurité", value: "Anti-écrasement" },
+      { label: "Origine", value: "Italie" },
+    ],
+    highlights: ["Coulissant", "Key Automation", "Sécurisé"],
+    crossSell: ["auto-euromatic-techno", "renovation-villa-complete", "electrolyseur-sel"],
+  },
+
+  // ========== SÉCURITÉ VILLA ==========
+  {
+    id: "sec-hikvision-ax-pro",
+    category: "securite",
+    name: "Hikvision AX PRO — Centrale alarme",
+    gammeLabel: "Alarme intrusion · Sans fil",
+    shortDescFr:
+      "Centrale d'alarme Hikvision AX PRO sans fil — détecteurs PIR, contacts, sirènes et pilotage Hik-Connect. Installation RIZAL.",
+    longDescFr:
+      "Le système AX PRO Hikvision protège votre villa par radio 868 MHz : centrale DS-PWA64/96, détecteurs de mouvement, contacts d'ouverture, sirènes et télécommandes. Alertes instantanées sur smartphone via Hik-Connect, vérification vidéo IVaaS avec détecteurs PIRCAM.",
+    image: "/img/categories/securite/hikvision-ax-pro-card.jpg?v=2",
+    specs: [
+      { label: "Marque", value: "Hikvision" },
+      { label: "Domaine", value: "Alarme intrusion" },
+      { label: "Protocole", value: "Tri-X / 868 MHz" },
+      { label: "App", value: "Hik-Connect" },
+      { label: "Zones", value: "Jusqu'à 96 périphériques" },
+    ],
+    highlights: ["Sans fil", "Hik-Connect", "IVaaS"],
+    crossSell: ["sec-hikvision-fumee", "sec-hikvision-colorvu", "auto-key-coulissant"],
+  },
+  {
+    id: "sec-hikvision-fumee",
+    category: "securite",
+    name: "Hikvision — Détecteur de fumée",
+    gammeLabel: "Incendie · AX PRO",
+    shortDescFr:
+      "Détecteur de fumée photoélectrique Hikvision DS-PDSMK-E-WE — alarme 85 dB, compatible centrale AX PRO.",
+    longDescFr:
+      "Le détecteur de fumée sans fil Hikvision DS-PDSMK-E-WE utilise une chambre photoélectrique pour détecter les incendies couvants. Sirène intégrée 85 dB, transmission AES-128, pile 10 ans. Se connecte à la centrale AX PRO pour alerter votre smartphone en cas de départ de feu.",
+    image: "/img/categories/securite/hikvision-fumee-card.jpg?v=2",
+    specs: [
+      { label: "Marque", value: "Hikvision" },
+      { label: "Domaine", value: "Détection incendie" },
+      { label: "Technologie", value: "Photoélectrique" },
+      { label: "Sirène", value: "≥ 85 dB" },
+      { label: "Portée radio", value: "1 600 m" },
+    ],
+    highlights: ["Incendie", "Sans fil", "Pile 10 ans"],
+    crossSell: ["sec-hikvision-ax-pro", "sec-hikvision-colorvu", "adoucisseur-villa"],
+  },
+  {
+    id: "sec-hikvision-colorvu",
+    category: "securite",
+    name: "Hikvision ColorVu — Caméra bullet",
+    gammeLabel: "Vidéosurveillance · 4 MP · AcuSense",
+    shortDescFr:
+      "Caméra bullet Hikvision ColorVu 4 MP — image couleur 24h/24, détection AcuSense, micro et sirène intégrés.",
+    longDescFr:
+      "La caméra Hikvision DS-2CD2047G2H-LIU ColorVu AcuSense offre une surveillance 4 MP avec lumière hybride, vision couleur de nuit et détection intelligente humain/véhicule. Boîtier IP67, audio bidirectionnel, alimentation PoE. Idéale pour entrée villa, jardin ou périmètre extérieur.",
+    image: "/img/categories/securite/hikvision-colorvu-card.jpg?v=2",
+    specs: [
+      { label: "Marque", value: "Hikvision" },
+      { label: "Domaine", value: "Vidéosurveillance" },
+      { label: "Résolution", value: "2 MP ColorVu" },
+      { label: "Vision nocturne", value: "Couleur 24h/24" },
+      { label: "Protection", value: "IP67" },
+    ],
+    highlights: ["ColorVu", "PoE", "Deep Learning"],
+    crossSell: ["sec-imou-cruiser-dual", "sec-hikvision-ax-pro", "renovation-villa-complete"],
+  },
+  {
+    id: "sec-imou-cruiser-dual",
+    category: "securite",
+    name: "Imou Cruiser Dual 2 — Caméra double objectif",
+    gammeLabel: "Vidéosurveillance · 10 MP · Double objectif",
+    shortDescFr:
+      "Caméra extérieure Imou Cruiser Dual 2 — double objectif 5+5 MP, vision nocturne couleur, détection IA et sirène 110 dB.",
+    longDescFr:
+      "L'Imou Cruiser Dual 2 combine deux capteurs 5 MP indépendants : un objectif fixe et un module motorisé PTZ pour surveiller deux zones simultanément. Wi-Fi 6, vision nocturne couleur, détection humain/véhicule IMOU SENSE, lumières rouge-bleu et sirène 110 dB. Pilotage via l'application Imou Life.",
+    image: "/img/categories/securite/imou-cruiser-dual-card.v3.jpg",
+    specs: [
+      { label: "Marque", value: "Imou" },
+      { label: "Domaine", value: "Vidéosurveillance" },
+      { label: "Résolution", value: "10 MP (5+5 MP)" },
+      { label: "Connectivité", value: "Wi-Fi 6" },
+      { label: "Protection", value: "IP66" },
+    ],
+    highlights: ["Double objectif", "IMOU SENSE", "Sirène 110 dB"],
+    crossSell: ["sec-hikvision-colorvu", "sec-hikvision-ax-pro", "auto-key-coulissant"],
+  },
+
+  // ========== POMPES VILLA ==========
+  {
+    id: "pomp-deversopompes-immergee",
+    category: "pompes",
+    name: "Deversopompes — Pompe immergée",
+    gammeLabel: "Forage · Puits · Inox",
+    shortDescFr:
+      "Pompe immergée Deversopompes pour forage et puits — acier inox, haut rendement, installation RIZAL.",
+    longDescFr:
+      "Les pompes immergées Deversopompes assurent le captage d'eau en profondeur pour villas, jardins et irrigation. Corps inox, turbine multicellulaire, débit adapté aux forages 4\" et 6\". Dimensionnement, pose et mise en service par RIZAL à Essaouira et région.",
+    image: "/img/categories/pompes/deversopompes-card.jpg",
+    specs: [
+      { label: "Marque", value: "Deversopompes" },
+      { label: "Type", value: "Pompe immergée" },
+      { label: "Matériau", value: "Acier inoxydable" },
+      { label: "Usage", value: "Forage / puits / irrigation" },
+      { label: "Installation", value: "RIZAL" },
+    ],
+    highlights: ["Inox", "Haut rendement", "Forage & puits"],
+    crossSell: ["pomp-ecwat-surpresseur", "adoucisseur-villa", "auto-euromatic-techno"],
+  },
+  {
+    id: "pomp-ecwat-surpresseur",
+    category: "pompes",
+    name: "Ecwat — Pompe surpresseur",
+    gammeLabel: "Surpression · Multicellulaire · Inox",
+    shortDescFr:
+      "Pompe surpresseur Ecwat multicellulaire horizontale — pression constante pour villa, arrosage et réseau domestique.",
+    longDescFr:
+      "La pompe centrifuge multicellulaire horizontale Ecwat MH assure une surpression fiable pour l'alimentation en eau de votre villa : douches, robinets, arrosage et ballon de stockage. Corps inox 304/316, fonctionnement silencieux, débit jusqu'à 14 m³/h. Installation et réglage par RIZAL.",
+    image: "/img/categories/pompes/ecwat-surpresseur-card.jpg",
+    specs: [
+      { label: "Marque", value: "Ecwat" },
+      { label: "Type", value: "Surpresseur horizontal" },
+      { label: "Matériau", value: "Inox 304/316" },
+      { label: "Débit max.", value: "14 m³/h" },
+      { label: "HMT max.", value: "57 m" },
+    ],
+    highlights: ["Surpression", "Silencieuse", "Inox"],
+    crossSell: ["pomp-deversopompes-immergee", "adoucisseur-villa", "renovation-villa-complete"],
+  },
+
+  // ========== CHAUFFE-EAU ÉLECTRIQUE MEGALIFE ==========
+  {
+    id: "ces-megalife-slim-silver",
+    category: "chauffe-eau",
+    brand: "MEGALIFE",
+    name: "Megalife — Slim Silver",
+    gammeLabel: "30 à 100 L — Ultra slim · Wi-Fi",
+    shortDescFr:
+      "Chauffe-eau électrique Slim Silver Megalife — design ultra-fin, double réservoir, pilotage Wi-Fi et protection surchauffe.",
+    longDescFr:
+      "La gamme Slim Silver Megalife combine un profil ultra-compact et une cuve en acier émaillé haute température. Réservoir double paroi, anode magnésium, isolation polyuréthane CFC-free et contrôle à distance via application mobile Wi-Fi. Disponible de 30 à 100 litres pour salle de bain, cuisine ou local technique.",
+    image: "/img/categories/chauffe-eau/slim-silver-card.jpg",
+    capacities: ["30 L", "40 L", "50 L", "60 L", "80 L", "100 L"],
+    specs: [
+      { label: "Marque", value: "Megalife" },
+      { label: "Type", value: "Cumulus vertical slim" },
+      { label: "Capacités", value: "30 à 100 L" },
+      { label: "Puissance", value: "2000 W" },
+      { label: "Connectivité", value: "Wi-Fi (selon modèle)" },
+      { label: "Installation", value: "RIZAL" },
+    ],
+    highlights: ["Ultra slim", "Wi-Fi", "Double réservoir"],
+    crossSell: ["ces-megalife-blanc-elcb", "adoucisseur-villa", "pomp-ecwat-surpresseur"],
+  },
+  {
+    id: "ces-megalife-smart-square",
+    category: "chauffe-eau",
+    brand: "MEGALIFE",
+    name: "Megalife — Smart Square",
+    gammeLabel: "30 à 100 L — Format carré · Design moderne",
+    shortDescFr:
+      "Chauffe-eau électrique Smart Square Megalife — format carré compact, esthétique contemporaine et protection ELCB intégrée.",
+    longDescFr:
+      "Le Smart Square Megalife adopte une silhouette carrée pour optimiser l'espace dans les pièces d'eau modernes. Cuve émaillée, thermostat réglable, protection contre la surchauffe et le fonctionnement à sec. Capacités de 30 à 100 litres selon le nombre de points d'eau de votre villa.",
+    image: "/img/categories/chauffe-eau/smart-square-card.jpg",
+    capacities: ["30 L", "50 L", "80 L", "100 L"],
+    specs: [
+      { label: "Marque", value: "Megalife" },
+      { label: "Type", value: "Cumulus vertical carré" },
+      { label: "Capacités", value: "30 à 100 L" },
+      { label: "Puissance", value: "1500 – 2000 W" },
+      { label: "Protection", value: "ELCB intégré" },
+      { label: "Installation", value: "RIZAL" },
+    ],
+    highlights: ["Format carré", "Design moderne", "ELCB"],
+    crossSell: ["ces-megalife-slim-silver", "ces-megalife-deco-elcb", "renovation-villa-complete"],
+  },
+  {
+    id: "ces-megalife-blanc-elcb",
+    category: "chauffe-eau",
+    brand: "MEGALIFE",
+    name: "Megalife — Blanc Protection ELCB",
+    gammeLabel: "30 à 150 L — Cylindrique · Sécurité renforcée",
+    shortDescFr:
+      "Chauffe-eau électrique blanc Megalife avec protection ELCB — cumulus cylindrique fiable pour toute la villa.",
+    longDescFr:
+      "La gamme Blanc Protection ELCB Megalife est le choix classique pour une production d'eau chaude sanitaire fiable. Cuve en acier émaillé, isolation renforcée, disjoncteur différentiel intégré et anode magnésium. Capacités de 30 à 150 litres pour couvrir une salle de bain, une cuisine ou l'ensemble de la villa.",
+    image: "/img/categories/chauffe-eau/blanc-elcb-card.jpg",
+    capacities: ["30 L", "50 L", "80 L", "100 L", "120 L", "150 L"],
+    specs: [
+      { label: "Marque", value: "Megalife" },
+      { label: "Type", value: "Cumulus vertical cylindrique" },
+      { label: "Capacités", value: "30 à 150 L" },
+      { label: "Puissance", value: "1500 – 3000 W" },
+      { label: "Protection", value: "ELCB intégré" },
+      { label: "Installation", value: "RIZAL" },
+    ],
+    highlights: ["ELCB intégré", "Grandes capacités", "Fiable"],
+    crossSell: ["ces-megalife-slim-silver", "adoucisseur-villa", "pomp-ecwat-surpresseur"],
+  },
+  {
+    id: "ces-megalife-mini-eco",
+    category: "chauffe-eau",
+    brand: "MEGALIFE",
+    name: "Megalife — Mini Eco ELCB",
+    gammeLabel: "15 à 30 L — Sous évier · Compact",
+    shortDescFr:
+      "Chauffe-eau électrique Mini Eco Megalife — format compact sous évier ou point d'eau, protection ELCB.",
+    longDescFr:
+      "Le Mini Eco Megalife est conçu pour les espaces restreints : sous évier de cuisine, point d'eau invité ou local technique réduit. Profil slim, faible encombrement, chauffe rapide et protection ELCB. Idéal en complément d'un cumulus principal ou pour une salle d'eau secondaire.",
+    image: "/img/categories/chauffe-eau/mini-eco-card.jpg",
+    capacities: ["15 L", "30 L"],
+    specs: [
+      { label: "Marque", value: "Megalife" },
+      { label: "Type", value: "Cumulus compact" },
+      { label: "Capacités", value: "15 et 30 L" },
+      { label: "Usage", value: "Sous évier / point d'eau" },
+      { label: "Protection", value: "ELCB intégré" },
+      { label: "Installation", value: "RIZAL" },
+    ],
+    highlights: ["Sous évier", "Compact", "Économique"],
+    crossSell: ["ces-megalife-slim-silver", "ces-megalife-flashheat", "renovation-villa-complete"],
+  },
+  {
+    id: "ces-megalife-horizontal",
+    category: "chauffe-eau",
+    brand: "MEGALIFE",
+    name: "Megalife — Horizontal Slim Silver",
+    gammeLabel: "60 L — Combles · Faux plafond",
+    shortDescFr:
+      "Chauffe-eau électrique horizontal Slim Silver Megalife — installation sous faux plafond ou dans les combles.",
+    longDescFr:
+      "Le chauffe-eau horizontal Slim Silver Megalife s'installe en position couchée pour les combles, greniers ou espaces à faible hauteur sous plafond. Même qualité de cuve émaillée et d'isolation que la gamme slim verticale, avec support mural renforcé. Capacité 60 litres pour alimenter une salle de bain ou une cuisine.",
+    image: "/img/categories/chauffe-eau/horizontal-card.jpg",
+    capacities: ["60 L"],
+    specs: [
+      { label: "Marque", value: "Megalife" },
+      { label: "Type", value: "Cumulus horizontal" },
+      { label: "Capacité", value: "60 L" },
+      { label: "Puissance", value: "2000 W" },
+      { label: "Montage", value: "Horizontal — combles" },
+      { label: "Installation", value: "RIZAL" },
+    ],
+    highlights: ["Horizontal", "Combles", "Slim"],
+    crossSell: ["ces-megalife-slim-silver", "ces-megalife-blanc-elcb", "renovation-villa-complete"],
+  },
+  {
+    id: "ces-megalife-deco-elcb",
+    category: "chauffe-eau",
+    brand: "MEGALIFE",
+    name: "Megalife — Déco Silver ELCB",
+    gammeLabel: "30 L — Design argenté · Pièce d'eau visible",
+    shortDescFr:
+      "Chauffe-eau électrique Déco Silver Megalife — finition design argentée pour salle de bain ouverte.",
+    longDescFr:
+      "Le Déco Silver Megalife allie esthétique et sécurité : finition argentée soignée pour les salles de bain visibles ou les suites parentales, protection ELCB intégrée et cuve émaillée haute performance. Capacité 30 litres, idéal pour une salle d'eau attenante ou en complément d'une douche à l'italienne.",
+    image: "/img/categories/chauffe-eau/deco-elcb-card.jpg",
+    capacities: ["30 L"],
+    specs: [
+      { label: "Marque", value: "Megalife" },
+      { label: "Type", value: "Cumulus vertical déco" },
+      { label: "Capacité", value: "30 L" },
+      { label: "Finition", value: "Argent design" },
+      { label: "Protection", value: "ELCB intégré" },
+      { label: "Installation", value: "RIZAL" },
+    ],
+    highlights: ["Design argenté", "ELCB", "Salle de bain"],
+    crossSell: ["ces-megalife-smart-square", "ces-megalife-slim-silver", "renovation-villa-complete"],
+  },
+  {
+    id: "ces-megalife-flashheat",
+    category: "chauffe-eau",
+    brand: "MEGALIFE",
+    name: "Megalife — Instantané Flashheat",
+    gammeLabel: "5,5 à 24 kW — Eau chaude à la demande",
+    shortDescFr:
+      "Chauffe-eau électrique instantané Flashheat Megalife — eau chaude immédiate sans cumulus, de 5,5 à 24 kW.",
+    longDescFr:
+      "La gamme Flashheat Megalife produit de l'eau chaude instantanément, sans réservoir : idéale pour douches, lavabos ou points d'eau ponctuels. Modulation électronique de puissance, protection anti-brûlure et faible encombrement mural. Puissances de 5,5 à 24 kW selon le débit et le nombre de points d'eau simultanés.",
+    image: "/img/categories/chauffe-eau/flashheat-card.jpg",
+    capacities: ["5,5 kW", "7 kW", "9 kW", "12 kW", "18 kW", "24 kW"],
+    specs: [
+      { label: "Marque", value: "Megalife" },
+      { label: "Type", value: "Chauffe-eau instantané" },
+      { label: "Puissances", value: "5,5 à 24 kW" },
+      { label: "Alimentation", value: "Monophasé / Triphasé" },
+      { label: "Avantage", value: "Sans cumulus" },
+      { label: "Installation", value: "RIZAL" },
+    ],
+    highlights: ["Instantané", "Sans cumulus", "Compact"],
+    crossSell: ["ces-megalife-mini-eco", "ces-megalife-slim-silver", "adoucisseur-villa"],
   },
 ];

@@ -76,10 +76,18 @@ export function ServicePageShell({
               <article
                 key={item.id}
                 id={item.id}
-                className="grid grid-cols-1 gap-6 rounded-3xl border border-ink/5 bg-bone p-6 sm:grid-cols-5"
+                className="scroll-mt-28 grid grid-cols-1 gap-6 rounded-3xl border border-ink/5 bg-bone p-6 sm:grid-cols-5"
               >
-                <div className="relative aspect-square overflow-hidden rounded-2xl bg-ink/5 sm:col-span-2">
-                  <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white sm:col-span-2">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className={
+                      item.id === "sec-imou-cruiser-dual"
+                        ? "absolute inset-0 h-full w-full object-cover object-center"
+                        : "absolute inset-0 h-full w-full object-contain object-center"
+                    }
+                  />
                   {item.badge ? (
                     <span className="absolute left-3 top-3 rounded-full bg-ink/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest2 text-sand-300">
                       {item.badge}

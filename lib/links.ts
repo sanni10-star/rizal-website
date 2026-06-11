@@ -16,6 +16,14 @@ export function gammeHref(item: CatalogItem): string {
       return `/services/renovation-villa#${item.id}`;
     case "traitement-eau":
       return `/services/traitement-eau#${item.id}`;
+    case "automatisation":
+      return `/services/automatisation-eau-portail#${item.id}`;
+    case "securite":
+      return `/services/securite#${item.id}`;
+    case "pompes":
+      return `/services/pompes#${item.id}`;
+    case "chauffe-eau":
+      return `/services/chauffe-eau-electrique#${item.id}`;
     case "accessoire":
       return `/contact?accessoire=${item.id}`;
     default:

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Sun, Battery, Plug } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { SolairePhotovoltaiqueMarques } from "@/components/solaire/SolairePhotovoltaiqueMarques";
+import { SolairePhotovoltaiqueRubrique } from "@/components/solaire/SolairePhotovoltaiqueRubrique";
+import { SolaireVariateurRubriqueClient } from "@/components/solaire/SolaireVariateurRubriqueClient";
 import { SolairePanneauxRubrique } from "@/components/solaire/SolairePanneauxRubrique";
 import { SolaireOnduloursRubrique } from "@/components/solaire/SolaireOnduloursRubrique";
 import { SolaireBatteriesRubrique } from "@/components/solaire/SolaireBatteriesRubrique";
@@ -77,7 +78,18 @@ export default function SolairePage() {
               Rendement élevé et garanties constructeur sur devis.
             </p>
 
-            <SolairePhotovoltaiqueMarques />
+            <SolairePhotovoltaiqueRubrique />
+
+            <div className="mt-14 border-t border-ink/8 pt-12">
+              <h3 className="font-display text-xl text-ink md:text-2xl">
+                Variateur solaire
+              </h3>
+              <p className="mt-2 max-w-2xl text-sm text-ink/70">
+                Veichi et INVT — variateurs de pompage solaire monophasé et triphasé
+                pour irrigation, forage et piscine.
+              </p>
+              <SolaireVariateurRubriqueClient />
+            </div>
 
             <div className="mt-14 border-t border-ink/8 pt-12">
               <h3 className="font-display text-xl text-ink md:text-2xl">

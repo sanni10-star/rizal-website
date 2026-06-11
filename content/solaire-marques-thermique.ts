@@ -56,7 +56,7 @@ export const solaireThermiqueMarqueSections: SolaireThermiqueMarqueSection[] = [
         name: "TSR ECO — 150 L (1 capteur)",
         summary: "Thermosiphon TSR ECO, ballon acier émaillé, 1 capteur plan — réf. TSR1502 / TSR15025 / TSR1503.",
         image: `${IMG}/lato-150-main.png`,
-        imageInstall: `${IMG}/lato-150-install.png`,
+        imageInstall: `${IMG}/lato-150-install.jpg`,
         pdfHref: SOLAIRE_THERMIQUE_DOCS.latoTeliko,
         specs: [
           { label: "Volume", value: "150 L" },
@@ -69,7 +69,7 @@ export const solaireThermiqueMarqueSections: SolaireThermiqueMarqueSection[] = [
         name: "TSR ECO — 200 L (2 capteurs)",
         summary: "Thermosiphon TSR ECO double capteur — réf. TSR2002 / TSR20025 / TSR2003 / TSR2004.",
         image: `${IMG}/lato-200-main.png`,
-        imageInstall: `${IMG}/lato-200-install.png`,
+        imageInstall: `${IMG}/lato-200-install.jpg`,
         pdfHref: SOLAIRE_THERMIQUE_DOCS.latoTeliko,
         specs: [
           { label: "Volume", value: "200 L" },
@@ -82,7 +82,7 @@ export const solaireThermiqueMarqueSections: SolaireThermiqueMarqueSection[] = [
         name: "TSR ECO — double capteur (grande surface)",
         summary: "Configuration 2 capteurs grande surface nette (jusqu’à 4 m²) — fiche TSR ECO page 2.",
         image: `${IMG}/lato-300-main.png`,
-        imageInstall: `${IMG}/lato-300-install.png`,
+        imageInstall: `${IMG}/lato-300-install.jpg`,
         pdfHref: SOLAIRE_THERMIQUE_DOCS.latoTeliko,
         specs: [
           { label: "Surface nette", value: "jusqu’à 4,00 m²" },
@@ -95,7 +95,7 @@ export const solaireThermiqueMarqueSections: SolaireThermiqueMarqueSection[] = [
         name: "TSR ECO — kit complet (fiche technique)",
         summary: "Ballon émaillé, capteur(s), support Magnelis®, kit de raccordement — extrait brochure LATO.",
         image: `${IMG}/lato-split-main.png`,
-        imageInstall: `${IMG}/lato-split-install.png`,
+        imageInstall: `${IMG}/lato-split-install.jpg`,
         pdfHref: SOLAIRE_THERMIQUE_DOCS.latoTeliko,
         specs: [
           { label: "Kit", value: "Complet RIZAL" },
@@ -119,8 +119,8 @@ export const solaireThermiqueMarqueSections: SolaireThermiqueMarqueSection[] = [
         id: "sonne-capteur-plan",
         name: "Thermosiphon compact — 1 capteur",
         summary: "Petit système thermosiphon Sonne Aktion (document chauffe-eau émaillé).",
-        image: `${IMG}/sonne-collector-main.png`,
-        imageInstall: `${IMG}/sonne-collector-install.png`,
+        image: `${IMG}/sonne-collector-main.jpg`,
+        imageInstall: `${IMG}/sonne-collector-install.jpg`,
         pdfHref: SOLAIRE_THERMIQUE_DOCS.chauffeEauEmaille,
         specs: [
           { label: "Type", value: "Thermosiphon" },
@@ -132,8 +132,8 @@ export const solaireThermiqueMarqueSections: SolaireThermiqueMarqueSection[] = [
         id: "sonne-pack-2",
         name: "Thermosiphon — 2 capteurs",
         summary: "Système double capteurs + ballon horizontal (visuel catalogue PDF partagé).",
-        image: `${IMG}/sonne-pack-main.png`,
-        imageInstall: `${IMG}/sonne-pack-install.png`,
+        image: `${IMG}/sonne-pack-main.jpg`,
+        imageInstall: `${IMG}/sonne-pack-install.jpg`,
         pdfHref: SOLAIRE_THERMIQUE_DOCS.chauffeEauEmaille,
         specs: [
           { label: "Capteurs", value: "2 × plan" },
@@ -145,8 +145,8 @@ export const solaireThermiqueMarqueSections: SolaireThermiqueMarqueSection[] = [
         id: "sonne-regulation",
         name: "Thermosiphon grande capacité",
         summary: "Double capteur grande surface + ballon — ligne premium Sonne Aktion du PDF.",
-        image: `${IMG}/sonne-regulation-main.png`,
-        imageInstall: `${IMG}/sonne-regulation-install.png`,
+        image: `${IMG}/sonne-regulation-main.jpg`,
+        imageInstall: `${IMG}/sonne-regulation-install.jpg`,
         pdfHref: SOLAIRE_THERMIQUE_DOCS.sonneKeymark,
         specs: [
           { label: "Modèles cert.", value: "ATLAS CA 160 / 200 / 230" },

@@ -5,13 +5,13 @@
       <stop offset="100%" stop-color="#888c94"/>
     </linearGradient>
   </defs>
-  <rect x="20" y="30" width="360" height="180" rx="4" fill="url(#tf)" stroke="#E60012" stroke-width="3"/>
+  <rect x="20" y="30" width="360" height="180" rx="4" fill="url(#tf)" stroke="#008CD6" stroke-width="3"/>
   <rect x="28" y="38" width="344" height="164" rx="2" fill="#111"/>
   <g fill="#1e1e1e" stroke="#111" stroke-width="0.5">
     <rect x="32" y="42" width="36" height="46"/><rect x="72" y="42" width="36" height="46"/><rect x="112" y="42" width="36" height="46"/><rect x="152" y="42" width="36" height="46"/><rect x="192" y="42" width="36" height="46"/><rect x="232" y="42" width="36" height="46"/><rect x="272" y="42" width="36" height="46"/><rect x="312" y="42" width="36" height="46"/><rect x="352" y="42" width="16" height="46"/>
     <rect x="32" y="92" width="36" height="46"/><rect x="72" y="92" width="36" height="46"/><rect x="112" y="92" width="36" height="46"/><rect x="152" y="92" width="36" height="46"/><rect x="192" y="92" width="36" height="46"/><rect x="232" y="92" width="36" height="46"/><rect x="272" y="92" width="36" height="46"/><rect x="312" y="92" width="36" height="46"/><rect x="352" y="92" width="16" height="46"/>
     <rect x="32" y="142" width="36" height="56"/><rect x="72" y="142" width="36" height="56"/><rect x="112" y="142" width="36" height="56"/><rect x="152" y="142" width="36" height="56"/><rect x="192" y="142" width="36" height="56"/><rect x="232" y="142" width="36" height="56"/><rect x="272" y="142" width="36" height="56"/><rect x="312" y="142" width="36" height="56"/><rect x="352" y="142" width="16" height="56"/>
   </g>
-  <rect x="148" y="200" width="104" height="14" rx="2" fill="#E60012"/>
-  <text x="200" y="222" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#E60012">Vertex S+ · 670W</text>
+  <rect x="148" y="200" width="104" height="14" rx="2" fill="#008CD6"/>
+  <text x="200" y="222" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#008CD6">Vertex S+ ï¿½ 670W</text>
 </svg>

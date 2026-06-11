@@ -3,10 +3,10 @@ import type { CatalogItem } from "@/types/catalog";
 const PANELS = "/img/solaire/panels";
 
 const SOLAIRE_IMAGES = {
-  panneauJinko: `${PANELS}/jinko-tiger-neo-panel.svg`,
-  panneauJa: `${PANELS}/ja-solar-panel.svg`,
-  panneauTrina: `${PANELS}/trina-vertex-panel.svg`,
-  panneauCanadian: `${PANELS}/canadian-solar-panel.svg`,
+  panneauJinko: `${PANELS}/products/jinko-tiger-neo-product.jpg`,
+  panneauJa: `${PANELS}/products/ja-solar-deepblue-product.jpg`,
+  panneauTrina: `${PANELS}/products/trina-vertex-product.jpg`,
+  panneauCanadian: `${PANELS}/products/canadian-solar-product.jpg`,
   panneau: "/img/products/lg/lg-multi-v-5-hero-essaouira.jpg",
   panneauAlt: "/img/products/trane/trane-split-morocco-modern.jpg",
   chauffeEau: "/img/solaire/thermique/from-pdf/lato-teliko-a4-en/lato-teliko-a4-en-p01-img001.jpg",
@@ -37,6 +37,14 @@ const BATTERIE_IMAGES = {
   elitecEL10Installed: "/img/products/solaire/batteries/elitec-el10-installed.jpg",
   dyness15kwh: "/img/products/solaire/batteries/dyness-15kwh-tour.jpg",
   dyness15kwhInstalled: "/img/products/solaire/batteries/dyness-15kwh-installed.jpg",
+} as const;
+
+const VARIATEUR_IMAGES = {
+  veichiProduct: "/img/solaire/variateurs/products/veichi-variateur-product.jpg",
+  veichiInstallVilla: "/img/solaire/variateurs/install/veichi-install-villa.jpg",
+  invtProduct: "/img/solaire/variateurs/products/invt-variateur-product.jpg",
+  invtMonoInstall: "/img/solaire/variateurs/install/invt-mono-install.jpg",
+  invtTriInstall: "/img/solaire/variateurs/install/invt-tri-install.jpg",
 } as const;
 
 export const solaireItems: CatalogItem[] = [
@@ -267,6 +275,111 @@ export const solaireItems: CatalogItem[] = [
     ],
     highlights: ["Hybride + Off-Grid", "Polyvalent", "App de suivi"],
     crossSell: ["batterie-dyness-dl5", "batterie-must-lifepo4", "panneau-jinko-tiger-neo"],
+  },
+  // ========== VARIATEURS SOLAIRES ==========
+  {
+    id: "variateur-veichi-monophase",
+    category: "solaire",
+    name: "Variateur Veichi SI22 Monophasé",
+    gammeLabel: "Variateur solaire — Pompage monophasé 220 V",
+    shortDescFr:
+      "Variateur Veichi SI22-D3 monophasé 220 V pour pompage solaire — MPPT intégré, 0,75 à 7,5 kW.",
+    longDescFr:
+      "Le variateur Veichi SI22-D3 est conçu pour alimenter des pompes monophasées directement depuis des panneaux photovoltaïques. Tracker MPPT jusqu'à 99 %, plage DC 60–450 V, compatible pompes immergées et de surface. Idéal pour puits, citernes et irrigation résidentielle au Maroc.",
+    image: VARIATEUR_IMAGES.veichiProduct,
+    gallery: [VARIATEUR_IMAGES.veichiInstallVilla],
+    capacities: ["0,75 kW", "1,5 kW", "2,2 kW", "4 kW", "5,5 kW", "7,5 kW"],
+    specs: [
+      { label: "Catégorie", value: "Énergie solaire" },
+      { label: "Type", value: "Variateur de fréquence solaire" },
+      { label: "Marque", value: "Veichi" },
+      { label: "Référence", value: "SI22-D3" },
+      { label: "Phase", value: "Monophasé 220 V" },
+      { label: "MPPT", value: "Jusqu'à 99 %" },
+      { label: "Entrée DC", value: "60 – 450 V" },
+      { label: "Application", value: "Pompage solaire, irrigation" },
+    ],
+    highlights: ["Monophasé 220 V", "MPPT 99 %", "Pompes immergées"],
+    crossSell: ["variateur-veichi-triphase", "panneau-jinko-tiger-neo"],
+    badge: "Pompage",
+  },
+  {
+    id: "variateur-veichi-triphase",
+    category: "solaire",
+    name: "Variateur Veichi SI23 Triphasé",
+    gammeLabel: "Variateur solaire — Pompage triphasé 380 V",
+    shortDescFr:
+      "Variateur Veichi SI23-D5 triphasé 380 V — pompage solaire haute puissance, 2,2 à 75 kW.",
+    longDescFr:
+      "La série Veichi SI23-D5 alimente des pompes triphasées 380 V depuis un champ photovoltaïque. Efficacité MPPT jusqu'à 99 %, entrée DC 250–780 V, monitoring GPRS disponible. Solution professionnelle pour forage, agriculture et grands débits.",
+    image: VARIATEUR_IMAGES.veichiProduct,
+    gallery: [VARIATEUR_IMAGES.veichiInstallVilla],
+    capacities: ["2,2 kW", "4 kW", "5,5 kW", "7,5 kW", "11 kW", "15 kW", "22 kW", "30 kW", "75 kW"],
+    specs: [
+      { label: "Catégorie", value: "Énergie solaire" },
+      { label: "Type", value: "Variateur de fréquence solaire" },
+      { label: "Marque", value: "Veichi" },
+      { label: "Référence", value: "SI23-D5" },
+      { label: "Phase", value: "Triphasé 380 V" },
+      { label: "MPPT", value: "Jusqu'à 99 %" },
+      { label: "Entrée DC", value: "250 – 780 V" },
+      { label: "Application", value: "Forage, irrigation, piscine" },
+    ],
+    highlights: ["Triphasé 380 V", "Jusqu'à 75 kW", "MPPT avancé"],
+    crossSell: ["variateur-veichi-monophase", "panneau-trina-vertex"],
+    badge: "Pompage",
+  },
+  {
+    id: "variateur-invt-monophase",
+    category: "solaire",
+    name: "Variateur INVT GD100-PV Monophasé",
+    gammeLabel: "Variateur solaire — Pompage monophasé 220 V",
+    shortDescFr:
+      "Variateur INVT GD100-PV monophasé 220 V — pompage solaire plug & play, hybride PV + réseau.",
+    longDescFr:
+      "Le variateur INVT GD100-PV monophasé est dédié au pompage solaire résidentiel et agricole. Branchez les panneaux PV, la pompe démarre automatiquement. Fonction hybride solaire + réseau pour un fonctionnement 24 h/24, protections intégrées.",
+    image: VARIATEUR_IMAGES.invtProduct,
+    gallery: [VARIATEUR_IMAGES.invtMonoInstall],
+    capacities: ["0,4 kW", "1,5 kW", "2,2 kW", "4 kW", "5,5 kW", "7,5 kW"],
+    specs: [
+      { label: "Catégorie", value: "Énergie solaire" },
+      { label: "Type", value: "Variateur de fréquence solaire" },
+      { label: "Marque", value: "INVT" },
+      { label: "Référence", value: "GD100-PV" },
+      { label: "Phase", value: "Monophasé 220 V" },
+      { label: "Mode", value: "Hybride PV + réseau" },
+      { label: "Puissance", value: "0,4 – 7,5 kW" },
+      { label: "Application", value: "Pompage, irrigation" },
+    ],
+    highlights: ["Plug & Play", "Hybride PV/réseau", "Monophasé"],
+    crossSell: ["variateur-invt-triphase", "panneau-ja-solar-deepblue"],
+    badge: "Pompage",
+  },
+  {
+    id: "variateur-invt-triphase",
+    category: "solaire",
+    name: "Variateur INVT GD100-PV Triphasé",
+    gammeLabel: "Variateur solaire — Pompage triphasé 380 V",
+    shortDescFr:
+      "Variateur INVT GD100-PV triphasé 380 V — pompage solaire 4 à 110 kW, IP54.",
+    longDescFr:
+      "Le variateur INVT GD100-PV triphasé couvre les applications de pompage solaire exigeantes : forage profond, irrigation de grande surface, exploitation agricole. Algorithme MPPT, commutation automatique PV/réseau, boîtier IP54 pour installation extérieure.",
+    image: VARIATEUR_IMAGES.invtProduct,
+    gallery: [VARIATEUR_IMAGES.invtTriInstall],
+    capacities: ["4 kW", "5,5 kW", "7,5 kW", "11 kW", "15 kW", "18,5 kW", "22 kW", "30 kW", "37 kW", "55 kW", "75 kW", "110 kW"],
+    specs: [
+      { label: "Catégorie", value: "Énergie solaire" },
+      { label: "Type", value: "Variateur de fréquence solaire" },
+      { label: "Marque", value: "INVT" },
+      { label: "Référence", value: "GD100-PV" },
+      { label: "Phase", value: "Triphasé 380 V" },
+      { label: "Protection", value: "IP54" },
+      { label: "Puissance", value: "4 – 110 kW" },
+      { label: "Application", value: "Forage, agriculture, grands débits" },
+    ],
+    highlights: ["Triphasé 380 V", "IP54", "Jusqu'à 110 kW"],
+    crossSell: ["variateur-invt-monophase", "panneau-canadian-solar"],
+    badge: "Pompage",
   },
   // ========== BATTERIES ==========
   {

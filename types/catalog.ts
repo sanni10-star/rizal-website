@@ -4,6 +4,10 @@ export type Category =
   | "piscine"
   | "renovation"
   | "traitement-eau"
+  | "automatisation"
+  | "securite"
+  | "pompes"
+  | "chauffe-eau"
   | "accessoire";
 
 export type Brand = "MEGALIFE" | "INGELEC" | "LG" | "TRANE";

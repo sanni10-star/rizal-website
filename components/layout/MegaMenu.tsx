@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BRANDS_HVAC, brandSlug } from "@/content/catalog";
+import { VILLA_SERVICE_MENU_COLUMNS } from "@/content/navigation";
 
 type MenuItem = {
   label: string;
@@ -39,16 +40,7 @@ const menu: MenuItem[] = [
   {
     label: "Services",
     href: "/services/renovation-villa",
-    columns: [
-      {
-        title: "Services Villa",
-        links: [
-          { label: "Construction de Piscines", href: "/services/piscine" },
-          { label: "Rénovation Villa", href: "/services/renovation-villa" },
-          { label: "Traitement d'Eau", href: "/services/traitement-eau" },
-        ],
-      },
-    ],
+    columns: VILLA_SERVICE_MENU_COLUMNS,
   },
   { label: "Outils", href: "/outils" },
   { label: "Réalisations", href: "/realisations" },
@@ -85,7 +77,7 @@ export function DesktopNav() {
           {item.columns && open === item.label ? (
             <div
               className={cn(
-                "absolute left-0 top-full z-50 mt-2 w-[640px] rounded-3xl border border-ink/5 bg-white p-6 shadow-2xl shadow-ink/15",
+                "absolute left-0 top-full z-50 mt-2 w-[min(720px,calc(100vw-2rem))] rounded-3xl border border-ink/5 bg-white p-6 shadow-2xl shadow-ink/15",
               )}
             >
               <div className="grid grid-cols-2 gap-6">
